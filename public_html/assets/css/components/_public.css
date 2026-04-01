@@ -1,0 +1,127 @@
+/* ==========================================================
+   ESTILOS PARA A VISUALIZAÇÃO PÚBLICA (NÃO LOGADO)
+   ========================================================== */
+
+/* --- 1. Cabeçalho da Visualização Pública --- */
+.public-view-header {
+    background-color: #fff;
+    padding: 0 30px;
+    border-bottom: 1px solid #dddfe2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.public-view-header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0c2d54;
+    text-decoration: none;
+}
+
+.public-view-header .logo i {
+    margin-right: 10px;
+}
+
+.public-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.public-header-actions .login-link-public {
+    color: #0c2d54;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.public-header-actions .register-btn-public {
+    background-color: #42b72a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.public-header-actions .register-btn-public:hover {
+    background-color: #36a420;
+}
+
+
+/* --- 2. Conteúdo Principal da Visualização Pública --- */
+.main-content-public {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Card que mostra a foto e nome do perfil */
+.profile-preview-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+/* Card que chama o utilizador para se registar */
+.public-prompt-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #dddfe2;
+}
+
+.public-prompt-card h2 {
+    font-size: 1.5em;
+    color: #0c2d54;
+    margin-bottom: 10px;
+}
+
+.public-prompt-card p {
+    color: #606770;
+    margin-bottom: 25px;
+}
+
+.public-prompt-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.public-prompt-actions .primary-btn,
+.public-prompt-actions .secondary-btn {
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 12px;
+}
+
+.public-prompt-actions .secondary-btn {
+    background-color: #42b72a; /* Verde */
+}
+.public-prompt-actions .secondary-btn:hover {
+    background-color: #36a420;
+}
+
+.public-prompt-actions span {
+    font-weight: bold;
+    color: #606770;
+}

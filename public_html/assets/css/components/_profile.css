@@ -1,0 +1,290 @@
+/* ==========================================================
+   public_html/assets/css/components/_profile.css
+   VERSÃO INTEGRAL V60.8 - FIX: CALIBRATED TYPOGRAPHY & ELLIPSIS
+   ========================================================== */
+
+/* --- WRAPPER DO CABEÇALHO INTEGRADO --- */
+.profile-header-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: visible !important; 
+    position: relative;
+}
+
+/* --- SEÇÃO DA FOTO DE CAPA --- */
+.profile-cover-section {
+    width: 100%;
+    height: 220px; 
+    background-color: #f0f2f5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cover-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.3));
+    pointer-events: none;
+}
+
+.cover-upload-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 15;
+}
+
+/* --- CABEÇALHO DE IDENTIDADE (DESKTOP) --- */
+.profile-page-header {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 30px 25px 30px;
+    margin-top: -50px; 
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.profile-avatar-large {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+    border: 4px solid #fff;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-header-info {
+    flex-grow: 1;
+    padding-bottom: 10px;
+    text-align: left;
+    /* REFORÇO V60.8: Permite que o container encolha para o ellipsis funcionar corretamente */
+    min-width: 0; 
+}
+
+.profile-header-info h1 {
+    /* MUDANÇA V60.8: Tamanho reduzido para dar mais espaço (1.8em -> 1.4em) */
+    font-size: 1.4em;
+    margin: 0;
+    color: #050505;
+    font-weight: 800;
+    
+    /* TRUNCAGEM EM LINHA ÚNICA */
+    display: block;           
+    white-space: nowrap;      
+    overflow: hidden;         
+    text-overflow: ellipsis;  
+    max-width: 100%;          
+}
+
+/* Ajuste para ícones/dots dentro do h1 agora que é block */
+.profile-header-info h1 .status-dot-info, 
+.profile-header-info h1 i {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.profile-username {
+    color: #65676b;
+    margin: 2px 0 0 0;
+    font-size: 1.05em;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-bio {
+    font-size: 0.95em;
+    color: #050505;
+    margin-top: 12px;
+    line-height: 1.4;
+    text-align: left;
+    max-width: 500px;
+}
+
+/* --- BOTÕES DE AÇÃO E DROPDOWNS --- */
+.profile-header-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+    flex-shrink: 0; /* Impede que os botões "esmaguem" o texto precocemente */
+}
+
+.action-btn-add,
+.action-btn-friends,
+.action-btn-pending,
+.action-btn-edit,
+.action-btn-message {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+    text-decoration: none !important;
+    font-family: inherit;
+}
+
+.action-btn-add { background-color: #0C2D54 !important; color: white; }
+.action-btn-add:hover { background-color: #0a2444; }
+
+.action-btn-edit, .action-btn-friends, .action-btn-message { 
+    background-color: #e4e6eb; color: #050505; 
+}
+
+.action-btn-pending { 
+    background-color: #e4e6eb; color: #606770; cursor: not-allowed; 
+}
+
+.friend-actions-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.friend-actions-dropdown.is-active .dropdown-content {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 2000 !important; 
+    padding: 8px 0;
+    margin-top: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    flex-direction: column;
+    transition: opacity 0.2s, transform 0.2s;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.dropdown-content a {
+    color: #050505;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f2f5;
+}
+
+/* --- RESPONSIVIDADE MOBILE REFORÇADA --- */
+@media (max-width: 768px) {
+    .profile-cover-section { 
+        height: 180px !important; 
+    }
+
+    .profile-page-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-top: -75px !important; 
+        padding: 0 15px 20px 15px !important;
+    }
+
+    .profile-avatar-large {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        width: 150px !important;
+        height: 150px !important;
+        display: block !important;
+    }
+
+    .profile-header-info {
+        text-align: center !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        display: block !important;
+    }
+
+    .profile-header-info h1 {
+        justify-content: center !important;
+        /* MUDANÇA V60.8: Fonte mobile reduzida proporcionalmente */
+        font-size: 1.3em !important; 
+    }
+
+    .profile-bio {
+        text-align: center !important;
+        margin: 12px auto 0 auto !important;
+        max-width: 100% !important;
+    }
+
+    .profile-header-actions {
+        margin: 15px 0 0 0 !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+}
+
+/* --- NAVEGAÇÃO E STATUS --- */
+.profile-nav {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    display: flex;
+    overflow-x: auto;
+}
+
+.profile-nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #65676b;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.profile-nav a.active {
+    color: #0C2D54;
+    border-bottom: 3px solid #0C2D54;
+}
+
+.status-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: inline-block;
+}
+.status-online { background-color: #31a24c; border: 2px solid #fff; }

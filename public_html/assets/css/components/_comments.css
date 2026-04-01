@@ -1,0 +1,583 @@
+/* ==========================================================
+   _comments.css
+   CONSOLIDADO: Feed Preview + Edição + Lightbox Modal (UX Pro)
+   VERSÃO: V8.0 (Blindagem de Z-Index e Resolução de Conflitos)
+   ========================================================== */
+
+/* Estilos para a seção de comentários de um post */
+.post-comments-section {
+    border-top: 1px solid #e4e6eb;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+/* Estilos para a prévia dos comentários no feed */
+.comment-preview-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.comment-preview-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+/* Estilos para o avatar na prévia */
+.comment-preview-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #606770;
+}
+.comment-preview-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.comment-preview-avatar .fas.fa-user {
+    font-size: 1.2em;
+}
+
+
+.comment-preview-main {
+    flex-grow: 1;
+}
+
+/* --- [ INÍCIO DA MODIFICAÇÃO (SELEÇÃO DE TEXTO) ] --- */
+.comment-preview-content {
+    background-color: transparent; /* Alterado de #f0f2f5 para transparente */
+    padding: 0;                 /* Removido o padding do balão */
+    border-radius: 0;           /* Removido o border-radius do balão */
+    word-wrap: break-word;
+
+    /* Permite que o texto do comentário (prévia) seja selecionado */
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+/* --- [ FIM DA MODIFICAÇÃO ] --- */
+
+.comment-author {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Estilos para as ações na prévia */
+.comment-preview-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8em;
+    color: #606770;
+    margin-top: 4px;
+    padding-left: 0; /* Removido o padding esquerdo */
+}
+.comment-preview-actions a {
+    color: #606770;
+    text-decoration: none;
+    font-weight: bold;
+}
+.comment-preview-actions a:hover {
+    text-decoration: underline;
+}
+.comment-preview-actions .comment-like-btn.active {
+    color: #0866FF;
+}
+.comment-preview-actions .comment-like-count {
+    font-size: 1em;
+    color: #606770;
+}
+.comment-preview-actions .comment-like-count i {
+    color: #0866FF;
+}
+
+
+/* Links "Ver todos os comentários" e contagem de comentários */
+.view-all-comments {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #606770;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.view-all-comments:hover {
+    text-decoration: underline;
+}
+.comment-count {
+    text-decoration: none;
+    color: #606770;
+}
+.comment-count:hover {
+    text-decoration: underline;
+}
+
+/* --- [INÍCIO DA NOVA REGRA "VER MAIS"] --- */
+/* Estilo para o link "ver mais..." de comentários longos */
+.see-more-link {
+    font-weight: bold;
+    color: #606770; /* Cor de texto secundária */
+    font-size: 0.9em;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    padding-left: 5px; /* Adiciona um pequeno espaço à esquerda */
+}
+.see-more-link:hover {
+    text-decoration: underline;
+}
+/* --- [FIM DA NOVA REGRA] --- */
+
+
+/* ========================================================== */
+/* --- Estilos para a Lista Completa de Comentários --- */
+/* ========================================================== */
+
+.full-comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* * Esta regra é específica para o lightbox (Correção de alinhamento do menu)
+ */
+.full-comment-list .comment-item {
+    position: relative; 
+}
+
+
+.comment-author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.comment-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
+.comment-bubble {
+    background-color: #f0f2f5;
+    padding: 8px 12px;
+    border-radius: 18px;
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.comment-author-name {
+    font-weight: 600;
+    font-size: 0.85em;
+    color: #050505;
+    text-decoration: none;
+}
+.comment-author-name:hover {
+    text-decoration: underline;
+}
+
+/* --- [ INÍCIO DA MODIFICAÇÃO (SELEÇÃO DE TEXTO) ] --- */
+.comment-text {
+    margin: 2px 0 0 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+
+    /* Permite que o texto do comentário seja selecionado */
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+/* --- [ FIM DA MODIFICAÇÃO ] --- */
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8em;
+    color: #606770;
+    padding-left: 12px;
+    margin-top: 4px;
+}
+.comment-actions a {
+    color: #606770;
+    text-decoration: none;
+    font-weight: bold;
+}
+.comment-actions a:hover {
+    text-decoration: underline;
+}
+
+.comment-like-btn.active {
+    color: #0866FF;
+}
+
+.comment-like-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+    color: #0866FF;
+}
+
+.comment-options {
+    position: relative;
+}
+
+.comment-options-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #606770;
+    padding: 5px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+.comment-options-btn:hover {
+    background-color: #f0f2f5;
+}
+
+.comment-options-menu {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    width: 150px;
+}
+.comment-options-menu a {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #050505;
+}
+.comment-options-menu a:hover {
+    background-color: #f0f2f5;
+}
+
+.comment-replies {
+    padding-left: 42px; /* Alinha com o início do balão de comentário pai */
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ========================================================== */
+/* --- REGRAS PARA O FORMULÁRIO DE COMENTÁRIO --- */
+/* ========================================================== */
+
+/* Faz com que o input e o botão fiquem lado a lado */
+.add-comment-form-container form, .reply-form-container form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo do campo de texto do comentário */
+.comment-input {
+    flex-grow: 1; /* Faz o campo ocupar todo o espaço disponível */
+    padding: 8px 15px;
+    border-radius: 20px; /* Deixa as bordas arredondadas */
+    background-color: #f0f2f5;
+    border: 1px solid #e4e6eb;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+
+/* Estilo do botão de enviar */
+.comment-submit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0c2d54;
+    font-size: 1.2em;
+    padding: 5px;
+}
+.comment-submit-btn:hover {
+    color: #0a2444;
+}
+
+
+/* --- [INÍCIO DAS NOVAS REGRAS DE EDIÇÃO] --- */
+/* Estilos para o formulário de EDIÇÃO de comentário */
+
+.comment-edit-form {
+    padding-left: 42px; /* Alinha com o início do balão (igual ao .comment-replies) */
+}
+
+/* Para o form de edição de uma RESPOSTA, remove o padding extra */
+.comment-replies .comment-edit-form {
+    padding-left: 0;
+}
+
+/* Textarea de edição */
+.comment-edit-textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 0.9em;
+    font-family: inherit;
+    margin-bottom: 8px;
+    background-color: #f0f2f5; /* Fundo igual ao input */
+}
+
+/* Ações (botões) do formulário de edição */
+.comment-edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* Botão Salvar (principal) */
+.comment-edit-save {
+    background-color: #0c2d54; /* Cor primária */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.comment-edit-save:hover {
+    background-color: #0a2444;
+}
+
+/* Botão Cancelar (secundário) */
+.comment-edit-cancel {
+    background-color: #e4e6eb; /* Cor cinza */
+    color: #050505;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.comment-edit-cancel:hover {
+    background-color: #d8dbdf;
+}
+
+
+/* ========================================================== */
+/* --- NOVO: LIGHTBOX MODAL DE INTERAÇÃO (Blindagem V8) --- */
+/* ========================================================== */
+
+/* Overlay de fundo */
+.modal-interaction-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    /* BLINDAGEM: Z-index elevado para ficar por cima de tudo */
+    z-index: 100000 !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.modal-interaction-overlay.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+/* Contentor do Modal */
+.modal-interaction-container {
+    background: #fff;
+    width: 95%;
+    max-width: 580px;
+    height: 90vh;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Cabeçalho do Modal */
+.modal-interaction-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e4e6eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-interaction-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #050505;
+    font-weight: 700;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: #65676b;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+.modal-close-btn:hover { color: #050505; }
+
+/* Corpo do Modal */
+.modal-interaction-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Resumo de Stats no Modal */
+.modal-post-stats-summary {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f2f5;
+    color: #65676b;
+    font-size: 0.95rem;
+}
+.modal-post-stats-summary .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.modal-post-stats-summary i { color: #1877f2; }
+
+/* Loading Placeholder */
+.modal-loading-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #65676b;
+    gap: 10px;
+}
+
+/* Rodapé fixo do Modal (Input de Comentário) */
+.modal-interaction-footer {
+    padding: 15px 20px;
+    background: #fff;
+    border-top: 1px solid #e4e6eb;
+}
+
+.modal-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Badge de Resposta ("A responder a...") */
+.reply-badge {
+    background: #e7f3ff;
+    color: #1877f2;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reply-badge.is-hidden { display: none; }
+
+.reply-badge button {
+    background: none;
+    border: none;
+    color: #1877f2;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.input-actions-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#modal-comment-input {
+    flex-grow: 1;
+    background: #f0f2f5;
+    border: 1px solid #ccd0d5;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+    outline: none;
+}
+
+.modal-send-btn {
+    background: none;
+    border: none;
+    color: #1877f2;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+.modal-send-btn:hover { transform: scale(1.1); }

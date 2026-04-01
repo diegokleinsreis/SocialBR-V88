@@ -1,0 +1,118 @@
+/**
+ * assets/css/components/chat/_chat_lightbox.css
+ * PAPEL: Estilização Premium exclusiva para o Lightbox do Chat.
+ * VERSÃO: V1.6 (Fix: Z-Index Absolute & Selector Specificity - socialbr.lol)
+ */
+
+/* 1. OVERLAY (Fundo total) 
+   Ajuste: Garantimos que o seletor procure as classes no MESMO elemento.
+*/
+.lightbox-overlay.is-chat-mode {
+    z-index: 10001 !important; /* Superior a qualquer elemento do chat */
+    background-color: rgba(0, 0, 0, 0.95) !important; /* Preto OLED Profundo */
+    display: none; /* Escondido por padrão, controlado pelo JS e is-visible */
+}
+
+/* Estado Visível: Ativa o display e a opacidade */
+.lightbox-overlay.is-chat-mode.is-visible {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    backdrop-filter: blur(15px) !important; 
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* 2. MODAL E COLUNAS */
+.lightbox-modal.is-chat-mode {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.is-chat-mode .lightbox-content,
+.is-chat-mode .lightbox-image-column {
+    background-color: transparent !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Esconde a coluna de comentários do feed no chat */
+.is-chat-mode .lightbox-details-column {
+    display: none !important;
+}
+
+/* 3. ALINHAMENTO DOS BOTÕES (Fechar e Salvar) */
+.is-chat-mode .lightbox-close-btn,
+.is-chat-mode .lightbox-download-btn {
+    position: fixed !important;
+    top: 20px !important;
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    background: #0C2D54 !important; /* Cor oficial sólida para contraste */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    z-index: 10002 !important; /* Acima do overlay */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Botão Fechar à direita */
+.is-chat-mode .lightbox-close-btn {
+    right: 20px !important;
+    font-size: 24px !important;
+}
+
+/* Botão Download ao lado do fechar */
+.is-chat-mode .lightbox-download-btn {
+    right: 75px !important;
+    font-size: 18px !important;
+    text-decoration: none !important;
+}
+
+.is-chat-mode .lightbox-close-btn:hover,
+.is-chat-mode .lightbox-download-btn:hover {
+    background: #143d6b !important; 
+    transform: scale(1.1);
+}
+
+/* 4. AJUSTE DA IMAGEM */
+.is-chat-mode .lightbox-image-wrapper img {
+    max-height: 85vh !important;
+    max-width: 95vw !important;
+    object-fit: contain !important;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+}
+
+/* 5. RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+    .is-chat-mode .lightbox-modal {
+        flex-direction: column !important;
+    }
+    
+    .is-chat-mode .lightbox-image-wrapper img {
+        max-height: 80vh !important;
+        width: 100vw !important;
+        border-radius: 0;
+    }
+
+    .is-chat-mode .lightbox-close-btn {
+        top: 15px !important;
+        right: 15px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .is-chat-mode .lightbox-download-btn {
+        top: 15px !important;
+        right: 65px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+}

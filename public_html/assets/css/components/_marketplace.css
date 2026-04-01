@@ -1,0 +1,601 @@
+/* ==========================================================================
+   MARKETPLACE UI V4.0 - CENTRALIZED & POLISHED
+   ========================================================================== */
+
+/* 1. VARIÁVEIS DE DESIGN (BIG TECH PALETTE) */
+:root {
+    --mkt-bg: #f0f2f5;
+    --mkt-card: #ffffff;
+    --mkt-primary: #1877f2;
+    --mkt-secondary: #e4e6eb;
+    --mkt-text-main: #050505;
+    --mkt-text-sub: #65676b;
+    --mkt-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --mkt-shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.15);
+    --mkt-radius: 12px;
+    --mkt-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 2. ESTRUTURA GLOBAL E LAYOUT */
+.main-container {
+    background-color: var(--mkt-bg);
+    min-height: 100vh;
+}
+
+/* Ajuste específico para quando o Marketplace é carregado dentro da estrutura do perfil */
+.mkt-feed-content {
+    flex: 1;
+    min-width: 0; /* Impede quebra de layout em telas menores */
+    padding: 20px;
+    background-color: var(--mkt-bg);
+}
+
+.mkt-layout-grid {
+    display: flex;
+    max-width: 1300px;
+    margin: 20px auto;
+    gap: 24px;
+    padding: 0 20px;
+}
+
+.mkt-sidebar-nav {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.mkt-main-feed {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 3. BARRA DE FERRAMENTAS (TOOLBAR) - vindo de barra_ferramentas.php */
+.mkt-toolbar {
+    background: var(--mkt-card);
+    border-bottom: 1px solid #dddfe2;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Alinhado com o grid */
+}
+
+.mkt-brand h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--mkt-text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mkt-action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-mkt-primary {
+    background: var(--mkt-primary);
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s var(--mkt-spring);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-mkt-secondary {
+    background: var(--mkt-secondary);
+    color: var(--mkt-text-main) !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-mkt-primary:hover { transform: scale(1.03); }
+.btn-mkt-secondary:hover { background-color: #d8dadf; }
+
+/* 4. BARRA DE CATEGORIAS (CLEAN & COMPACT) - vindo de barra_categorias.php */
+.mkt-category-bar {
+    background: #fff;
+    border-radius: var(--mkt-radius);
+    padding: 12px 5px; /* Reduzido de 15px */
+    margin-bottom: 20px;
+    box-shadow: var(--mkt-shadow);
+}
+
+.category-list-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px; /* Reduzido de 25px */
+    padding: 5px 15px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.category-list-wrapper::-webkit-scrollbar { display: none; }
+
+.category-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px; /* Reduzido gap */
+    text-decoration: none;
+    color: var(--mkt-text-sub);
+    transition: transform 0.2s var(--mkt-spring);
+    min-width: 60px;
+}
+
+.category-item i {
+    width: 40px; /* Reduzido de 52px (Tamanho ideal "Stories") */
+    height: 40px; /* Reduzido de 52px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+    border-radius: 50%;
+    font-size: 1.1rem; /* Fonte menor */
+    color: var(--mkt-text-main);
+    transition: all 0.2s ease;
+}
+
+.category-item span {
+    font-size: 0.7rem; /* Texto mais delicado */
+    font-weight: 600;
+    text-align: center;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+/* Estados Active/Hover */
+.category-item.active i {
+    background: #e7f3ff;
+    color: var(--mkt-primary);
+    box-shadow: 0 0 0 2px var(--mkt-primary);
+}
+.category-item.active span { color: var(--mkt-primary); }
+
+@media (hover: hover) {
+    .category-item:hover i {
+        background: #e4e6eb;
+        transform: translateY(-2px);
+    }
+}
+
+/* 5. BARRA DE PESQUISA (WRAPPER) - vindo de feed.php */
+.mkt-search-wrapper {
+    margin-bottom: 20px;
+    padding: 0 5px;
+}
+
+.mkt-search-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-shadow: var(--mkt-shadow);
+    border: 1px solid #dddfe2;
+    transition: box-shadow 0.2s;
+}
+
+.mkt-search-box:focus-within {
+    box-shadow: 0 0 0 2px #e7f3ff;
+    border-color: var(--mkt-primary);
+}
+
+.mkt-search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 0.95rem;
+    color: var(--mkt-text-main);
+}
+
+.mkt-search-box button {
+    background: none;
+    border: none;
+    color: var(--mkt-text-sub);
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.1rem;
+}
+
+/* 6. GRID E CARTÕES DE PRODUTO - vindo de cartao_produto.php */
+.marketplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--mkt-shadow);
+    transition: transform 0.2s var(--mkt-spring), box-shadow 0.2s;
+    border: 1px solid rgba(0,0,0,0.08);
+    height: 100%;
+    contain: content; /* Performance Boost */
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mkt-shadow-hover);
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    background-color: #f0f2f5;
+    overflow: hidden;
+}
+
+.product-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img { transform: scale(1.05); }
+
+.badge-local {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+
+.product-info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-price {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--mkt-text-main);
+}
+
+.product-title {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: var(--mkt-text-main);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.6em;
+}
+
+.product-meta {
+    font-size: 0.8rem;
+    color: var(--mkt-text-sub);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 7. ESTADOS VAZIOS */
+.mkt-no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--mkt-text-sub);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--mkt-shadow);
+}
+
+.mkt-no-results i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.3;
+}
+
+.btn-clear {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--mkt-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* 8. RESPONSIVIDADE FINAL */
+@media (max-width: 991px) {
+    .mkt-sidebar-nav { display: none; } /* Sidebar some no mobile */
+    .marketplace-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
+    .mkt-feed-content { padding: 15px 10px; }
+}
+
+@media (max-width: 600px) {
+    .d-none-mobile { display: none; } /* Esconde texto 'Meus Itens' */
+    
+    .toolbar-content { padding: 0 15px; }
+    
+    .mkt-brand h2 { font-size: 1.2rem; }
+    
+    .btn-mkt-primary, .btn-mkt-secondary {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .product-price { font-size: 1rem; }
+    .product-title { font-size: 0.9rem; }
+}
+
+/* --- CSS DO PAINEL DE CRIAÇÃO (PREVIEW) --- */
+.mkt-preview-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: sticky;
+    top: 90px; /* Fixa ao rolar */
+}
+
+.preview-header {
+    padding: 15px;
+    background: #f7f8fa;
+    border-bottom: 1px solid #dddfe2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview-header h4 { margin: 0; font-size: 1rem; color: #65676b; }
+
+.preview-toggles .btn-toggle {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #65676b;
+}
+
+.preview-toggles .btn-toggle.active {
+    background: #e7f3ff;
+    color: #1877f2;
+    border-color: #1877f2;
+}
+
+.preview-canvas {
+    padding: 20px;
+    background: #f0f2f5;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-mode { width: 100%; max-width: 280px; } /* Largura simulada do card */
+
+.preview-footer {
+    padding: 10px;
+    text-align: center;
+    color: #90949c;
+    font-size: 0.75rem;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* Desabilita cliques no preview para não sair da página */
+.disable-clicks { pointer-events: none; }
+
+/* ==========================================================
+   ATUALIZAÇÃO: MODULAR DARK MODE
+   ========================================================== */
+
+html.dark-mode :root {
+    --mkt-bg: var(--cor-fundo-principal); /* #18191A */
+    --mkt-card: var(--cor-fundo-secundario); /* #242526 */
+    --mkt-secondary: var(--cor-fundo-hover); /* #3A3B3C */
+    --mkt-text-main: var(--cor-texto-primario); /* #E4E6EB */
+    --mkt-text-sub: var(--cor-texto-secundario); /* #B0B3B8 */
+    --mkt-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .mkt-toolbar,
+html.dark-mode .mkt-category-bar,
+html.dark-mode .mkt-search-box,
+html.dark-mode .product-card,
+html.dark-mode .mkt-no-results,
+html.dark-mode .mkt-preview-box,
+html.dark-mode .preview-header {
+    background-color: var(--mkt-card) !important;
+    border-color: var(--cor-borda) !important;
+    color: var(--mkt-text-main) !important;
+}
+
+html.dark-mode .category-item i,
+html.dark-mode .preview-canvas,
+html.dark-mode .product-img-wrapper {
+    background-color: var(--mkt-secondary) !important;
+}
+
+html.dark-mode .category-item i {
+    color: var(--mkt-text-main);
+}
+
+html.dark-mode .mkt-search-box input {
+    color: var(--mkt-text-main);
+    background: transparent;
+}
+
+html.dark-mode .product-info {
+    border-top-color: var(--cor-borda);
+}
+
+html.dark-mode .preview-footer {
+    background-color: var(--mkt-card);
+    border-top-color: var(--cor-borda);
+    color: var(--mkt-text-sub);
+}
+
+html.dark-mode .btn-mkt-secondary {
+    background-color: var(--mkt-secondary);
+    color: var(--mkt-text-main) !important;
+}
+
+html.dark-mode .preview-toggles .btn-toggle {
+    background-color: var(--mkt-secondary);
+    border-color: var(--cor-borda);
+    color: var(--mkt-text-sub);
+}
+
+/* --- ESTILOS DE STATUS VENDIDO --- */
+.product-card.card-item-vendido .product-img {
+    filter: grayscale(100%); /* Deixa a foto preto e branco */
+    opacity: 0.8; /* Leve transparência */
+}
+
+.product-card.card-item-vendido:hover .product-img {
+    filter: grayscale(0%); /* Volta a cor se passar o mouse (efeito interativo) */
+    opacity: 1;
+}
+
+.badge-vendido-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    background-color: #e41e3f; /* Vermelho forte */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 3px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* --- ESTILOS DO VENDEDOR (SOCIAL) --- */
+.seller-mini-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px; /* Espaço antes do preço */
+}
+
+.seller-avatar-mini {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.seller-name-mini {
+    font-size: 0.8rem;
+    color: #65676b;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+/* --- BOTÃO AMEI (LIKE) FLUTUANTE --- */
+.btn-like-float {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 5; /* Fica acima da imagem */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.btn-like-float i {
+    font-size: 1.1rem;
+    color: #65676b; /* Cinza padrão (vazio) */
+    transition: color 0.2s ease;
+    margin-top: 2px; /* Ajuste ótico vertical */
+}
+
+/* Efeito Hover */
+.btn-like-float:hover {
+    transform: scale(1.15);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de Clique (Pressão) */
+.btn-like-float:active {
+    transform: scale(0.9);
+}
+
+/* Contador de Likes (Badge Pequeno) */
+.like-count-badge {
+    position: absolute;
+    bottom: -8px;
+    right: -5px;
+    background-color: #1877f2;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Modo Escuro (Compatibilidade) */
+html.dark-mode .btn-like-float {
+    background-color: rgba(36, 37, 38, 0.9);
+    border-color: rgba(255,255,255,0.1);
+}
+html.dark-mode .btn-like-float i {
+    color: #b0b3b8;
+}

@@ -1,0 +1,360 @@
+/* ==========================================================
+   public_html/assets/css/components/_modal.css
+   VERSÃO INTEGRAL V60.15 - FIX: RESPONSIVIDADE E SCROLL NO MODAL DENÚNCIA
+   PAPEL: Gerir todos os modais e garantir que alertas fiquem no topo.
+   ========================================================== */
+
+/* --- ESTILOS PARA O MODAL DE DENÚNCIA --- */
+.report-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.report-modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.report-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: #fff;
+    width: 500px;
+    max-width: 90%;
+    /* --- [CORREÇÃO V60.15: PADRÃO DE LUXO RESPONSIVO] --- */
+    max-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    /* --- [FIM DA CORREÇÃO] --- */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.report-modal.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.report-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dddfe2;
+    flex-shrink: 0; /* Garante que o topo nunca diminua */
+}
+
+.report-modal-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #0c2d54;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    line-height: 1;
+    color: #606770;
+    cursor: pointer;
+}
+
+.report-modal-body {
+    padding: 20px;
+    /* --- [CORREÇÃO V60.15: PERMITE SCROLL INTERNO] --- */
+    overflow-y: auto; 
+    flex-grow: 1;
+}
+
+.report-modal-info {
+    font-size: 0.9em;
+    color: #606770;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.report-options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.report-options-list .report-option {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #050505;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.report-options-list .report-option:hover {
+    background-color: #f0f2f5;
+}
+
+
+/* ==========================================================
+    ESTILOS PARA O NOVO MODAL DE COMPARTILHAMENTO (V54.1)
+    ========================================================== */
+
+#share-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+#share-modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#share-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: #fff; 
+    width: 550px; 
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh; 
+}
+#share-modal.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+html.dark-mode #share-modal .report-modal-header {
+    border-bottom-color: var(--cor-borda);
+}
+html.dark-mode #share-modal .report-modal-header h3 {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode #share-modal .close-modal-btn {
+    color: var(--cor-texto-secundario);
+}
+
+#share-modal .report-modal-body {
+    padding: 20px;
+    overflow-y: auto; 
+    flex-grow: 1;
+    background-color: #fff; 
+}
+
+.share-modal-textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    resize: none;
+    font-size: 1em;
+    font-family: inherit;
+    margin-bottom: 5px; 
+    box-sizing: border-box;
+    background-color: #f0f2f5; 
+    color: #050505; 
+}
+.share-modal-textarea::placeholder {
+    color: #606770;
+}
+
+#share-modal-preview-content {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+#share-modal .shared-post-wrapper {
+    margin-top: 0;
+}
+
+.report-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #dddfe2;
+    display: flex;
+    justify-content: flex-end; 
+    flex-shrink: 0;
+    background-color: #fff; 
+    border-top-color: var(--cor-borda); 
+}
+
+
+/* --- [MODAL DE BLOQUEIO] --- */
+#block-modal .share-modal-textarea {
+    margin-top: 15px; 
+}
+
+#block-modal .danger-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#block-modal .danger-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* ==========================================================
+    ESTILOS PARA O MODAL DE EDIÇÃO DE POSTAGEM (V60.12)
+    Design Minimalista com Z-Index Elevado ( socialbr.lol )
+    ========================================================== */
+
+#post-edit-interaction-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 99999; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px); 
+}
+
+#post-edit-interaction-modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#post-edit-interaction-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: #fff;
+    width: 600px;
+    max-width: 95%;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+    z-index: 100000; /* Z-index de referência do sistema */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+#post-edit-interaction-modal.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-edit-textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 20px;
+    border: 1px solid #f0f2f5; 
+    border-radius: 8px;
+    resize: none;
+    font-size: 1.05rem;
+    font-family: inherit;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #050505;
+    box-sizing: border-box;
+}
+
+.modal-edit-textarea:focus {
+    outline: none;
+    border-color: #0C2D54; 
+}
+
+.btn-modal-save-edit {
+    background-color: #0C2D54 !important;
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.1s;
+}
+
+.btn-modal-save-edit:hover {
+    filter: brightness(1.2);
+}
+
+.btn-modal-save-edit:active {
+    transform: scale(0.98);
+}
+
+.btn-modal-cancel-edit {
+    background: none;
+    color: #65676b;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-modal-cancel-edit:hover {
+    background-color: #f2f2f2;
+    color: #050505;
+}
+
+
+/* ==========================================================
+    BLINDAGEM SUPREMA DE SOBREPOSIÇÃO (SWEETALERT2 FIX)
+   ========================================================== */
+
+/* O SweetAlert2 usa a classe .swal2-container para o overlay global.
+   Para que ele apareça sobre o Modal de Edição (z-index: 100.000), 
+   precisamos de um valor superior.
+*/
+.swal2-container {
+    z-index: 9999999 !important; /* Prioridade máxima absoluta */
+}
+
+/* Ajuste fino para o menu de opções do comentário dentro do modal */
+.comment-options-menu {
+    top: 0;
+    right: 35px;
+    z-index: 200 !important;
+}
+
+.comment-options-menu a:hover {
+    background-color: #f2f2f2;
+}

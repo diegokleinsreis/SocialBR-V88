@@ -1,0 +1,379 @@
+/* ==========================================================================
+   SITE HEADER - ARQUITETURA MINIMALISTA (socialbr.lol)
+   VERSÃO: 9.1 - Mobile Overlay Full-Height + Calibração de Resultados
+   ========================================================================== */
+
+.site-header {
+    background-color: #fff;
+    padding: 0 20px;
+    border-bottom: 1px solid #dddfe2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 60px; 
+    max-width: 1150px;
+    position: relative;
+}
+
+/* --- DISTRIBUIÇÃO DAS ZONAS --- */
+
+.header-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px; 
+}
+
+.header-center {
+    flex: 2; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 60px;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    height: 60px;
+}
+
+/* --- IDENTIDADE (NOME CLICÁVEL) --- */
+
+.header-title {
+    color: #0c2d54;
+    font-size: 1.5em;
+    font-weight: 800;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    line-height: 60px; 
+}
+
+.header-title:hover {
+    opacity: 0.8;
+    color: #0c2d54;
+}
+
+/* --- BUSCA DESKTOP (CALIBRAÇÃO MANUAL) --- */
+
+.search-wrapper.desktop-only {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    /* MANTIDO: Ajuste manual do Arquiteto */
+    margin-top: 18px; 
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    height: 40px; 
+    background-color: #f0f2f5;
+    border: 1px solid #dddfe2; 
+    border-radius: 20px;
+    padding: 0 15px 0 42px; 
+    font-size: 0.95rem;
+    color: #1c1e21;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.search-input:focus {
+    background-color: #fff;
+    border-color: #0c2d54;
+    box-shadow: 0 0 0 2px rgba(12, 45, 84, 0.1);
+}
+
+.search-button {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%); 
+    
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0; 
+    
+    color: #0c2d54; 
+    cursor: pointer;
+    font-size: 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* MANTIDO: Ajuste óptico do Arquiteto */
+    margin-top: -5px; 
+    
+    height: 100%;
+    z-index: 2;
+}
+
+/* --- BOTÕES E MENUS --- */
+
+.logout-btn {
+    background-color: #e4e6eb;
+    color: #050505;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d8dbdf;
+}
+
+/* [CRÍTICO] Esconde elementos mobile no Desktop */
+.mobile-search-toggle, 
+.mobile-menu-container, 
+.mobile-search-overlay {
+    display: none !important;
+}
+
+/* --- ESTILOS DO MENU MOBILE LATERAL --- */
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #0c2d54;
+    cursor: pointer;
+}
+
+.mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2000;
+    padding: 20px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.mobile-nav-panel.is-open {
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   DROPDOWN DE BUSCA - CATEGORIZADO (DESKTOP)
+   ========================================================================== */
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 450px;
+    z-index: 1002;
+}
+
+.search-dropdown.active {
+    display: flex;
+}
+
+/* TÍTULOS DE CATEGORIA (DICA DE OURO) */
+.dropdown-category-divider {
+    background-color: #f0f2f5; 
+    color: #0c2d54; 
+    padding: 8px 15px;
+    font-size: 0.72rem; 
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-bottom: 1px solid #dddfe2;
+    display: block;
+    margin-top: 5px;
+}
+
+.dropdown-category-divider:first-of-type {
+    margin-top: 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #1c1e21;
+    gap: 12px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f2f3f5;
+}
+
+.dropdown-item img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #050505;
+}
+
+.dropdown-subtitle {
+    font-size: 0.78rem;
+    color: #65676b;
+}
+
+.ver-todos {
+    border-top: 1px solid #dddfe2;
+    color: #0c2d54 !important;
+}
+
+.ver-todos i {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4e6eb;
+    border-radius: 50%;
+    color: #0c2d54;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE ATÔMICA (MOBILE)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .desktop-nav, 
+    .search-wrapper.desktop-only {
+        display: none !important;
+    }
+
+    .mobile-menu-container, 
+    .mobile-search-toggle {
+        display: flex !important;
+    }
+
+    .mobile-search-toggle {
+        background: none;
+        border: none;
+        font-size: 1.3em;
+        color: #0c2d54;
+        cursor: pointer;
+    }
+
+    /* OVERLAY CORRIGIDO: Ocupa a tela inteira para mostrar resultados */
+    .mobile-search-overlay {
+        display: none; 
+        position: fixed; /* Fixado para cobrir a tela inteira */
+        top: 0;
+        left: 0; 
+        width: 100%;
+        height: 100vh; /* Altura total da tela */
+        background-color: #fff;
+        z-index: 2001; /* Acima do header e do menu lateral */
+        flex-direction: column; /* Organiza header e lista verticalmente */
+        align-items: stretch;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .mobile-search-overlay.active {
+        display: flex !important;
+    }
+
+    /* Cabeçalho do Overlay (Input e Voltar) */
+    .overlay-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+        padding: 10px 15px;
+        height: 60px;
+        border-bottom: 1px solid #dddfe2;
+        box-sizing: border-box;
+        flex-shrink: 0; /* Impede o cabeçalho de diminuir */
+    }
+
+    .close-search-mobile {
+        background: none;
+        border: none;
+        font-size: 1.3em;
+        color: #0c2d54;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .search-input-mobile {
+        flex: 1;
+        height: 40px;
+        background-color: #f0f2f5;
+        border: 1px solid #dddfe2;
+        border-radius: 20px; 
+        padding: 0 15px;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    /* CONTAINER DE RESULTADOS MOBILE (DICA DE OURO MOBILE) */
+    #mobile-search-results {
+        flex: 1;                /* Ocupa todo o resto da tela verticalmente */
+        overflow-y: auto;       /* Habilita rolagem própria da lista */
+        background: #fff;
+        padding-bottom: 80px;   /* Respiro para não colar na base do celular */
+    }
+
+    /* Ajuste de itens dentro do Mobile */
+    #mobile-search-results .dropdown-item {
+        padding: 15px;
+        border-bottom: 1px solid #f0f2f5;
+    }
+    
+    #mobile-search-results .dropdown-category-divider {
+        margin-top: 0;
+        background-color: #f8f9fa;
+        padding: 10px 15px;
+    }
+}

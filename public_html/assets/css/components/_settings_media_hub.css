@@ -1,0 +1,174 @@
+/* ==========================================================
+   VISUAL MEDIA HUB - SETTINGS (V65.6 - DARK MODE READY)
+   Refatorado com Variáveis CSS para suporte White-Label e Dark Mode.
+   ========================================================== */
+
+.settings-media-hub {
+    /* --- DICIONÁRIO DE CORES DO COMPONENTE (LIGHT THEME DEFAULT) --- */
+    --hub-cover-bg: #f0f2f5;
+    --hub-border: #ddd;
+    --hub-avatar-border: #ffffff;
+    --hub-avatar-bg: #ffffff;
+    --hub-icon-bg: #e4e6eb;
+    --hub-icon-hover: #d8dbde;
+    --hub-icon-text: #050505;
+    --hub-title-color: #050505;
+    --hub-desc-color: #65676b;
+    --hub-btn-glass: rgba(255, 255, 255, 0.2);
+    --hub-btn-glass-hover: rgba(255, 255, 255, 0.4);
+    --hub-btn-glass-border: rgba(255, 255, 255, 0.4);
+
+    width: 100%;
+    margin-bottom: 60px; /* Espaço para o avatar transbordar sem cortar */
+    position: relative;
+}
+
+/* Container da Capa na Configuração */
+.settings-cover-preview {
+    width: 100%;
+    height: 180px; 
+    background-color: var(--hub-cover-bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid var(--hub-border);
+}
+
+/* Overlay Superior de Alto Contraste para Fotos Pretas */
+.settings-cover-overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Camada de botões de ação sobre a capa */
+.cover-actions-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+/* Botão de Troca de Capa - Centralização Garantida */
+.hub-action-btn {
+    background: var(--hub-btn-glass); 
+    color: #ffffff !important;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid var(--hub-btn-glass-border);
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Centralização forçada */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.hub-action-btn i {
+    font-size: 14px;
+    color: #ffffff !important;
+    display: block;
+    line-height: 1;
+}
+
+.hub-action-btn:hover {
+    background: var(--hub-btn-glass-hover);
+    transform: scale(1.1);
+}
+
+/* Botão de excluir capa */
+.hub-action-btn.delete-btn {
+    background: rgba(220, 53, 69, 0.75);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Avatar sobreposto */
+.settings-avatar-preview {
+    position: absolute;
+    bottom: -35px;
+    left: 25px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid var(--hub-avatar-border);
+    background: var(--hub-avatar-bg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 20;
+}
+
+.settings-avatar-preview img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Ícone de Editar Avatar - Centralização Matemática */
+.avatar-edit-icon {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: var(--hub-icon-bg);
+    color: var(--hub-icon-text);
+    width: 32px;  
+    height: 32px; 
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    z-index: 25;
+    transition: background 0.2s;
+    
+    /* Centralização forçada */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.avatar-edit-icon i {
+    font-size: 15px;
+    display: block;
+    line-height: 1;
+    margin: 0;
+}
+
+.avatar-edit-icon:hover {
+    background: var(--hub-icon-hover);
+}
+
+/* Área de texto abaixo do hub visual */
+.hub-info-text {
+    margin-top: 55px;
+    padding: 0 10px;
+}
+
+.hub-info-text h3 {
+    margin: 0;
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--hub-title-color);
+}
+
+.hub-info-text p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    color: var(--hub-desc-color);
+}

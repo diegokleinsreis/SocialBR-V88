@@ -1,0 +1,423 @@
+/**
+ * assets/css/components/_marketplace_detalhes.css
+ * VERSÃO 11.3: Galeria Premium + Social Features
+ */
+
+:root {
+    --mkt-blue: #1877f2;
+    --mkt-blue-hover: #166fe5;
+    --mkt-bg-body: #f0f2f5;
+    --mkt-white: #ffffff;
+    --mkt-text-main: #050505;
+    --mkt-text-sub: #65676b;
+    --mkt-border: #dddfe2;
+    --mkt-radius: 8px;
+    --mkt-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   1. ESTRUTURA GLOBAL E LAYOUT
+   ========================================= */
+.mkt-detail-wrapper {
+    width: 100%;
+    background-color: var(--mkt-bg-body);
+    min-height: 100vh; /* Alterado de 100dvh para compatibilidade */
+    padding: 20px 0 40px 0;
+}
+
+.mkt-container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Link de Voltar */
+.mkt-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--mkt-text-sub);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+.mkt-back-link:hover {
+    color: var(--mkt-blue);
+}
+
+/* Grid Principal (2 Colunas: Galeria | Info) */
+.mkt-detail-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Esquerda maior que a direita */
+    gap: 20px;
+    align-items: start;
+}
+
+/* Cards Base */
+.mkt-main-card, 
+.mkt-sidebar-card {
+    background: var(--mkt-white);
+    border-radius: var(--mkt-radius);
+    box-shadow: var(--mkt-shadow);
+    overflow: hidden;
+}
+
+/* =========================================
+   2. GALERIA PREMIUM (ESQUERDA)
+   ========================================= */
+.mkt-main-card {
+    padding: 0; /* A imagem deve encostar nas bordas */
+    background: #000; /* Fundo preto para destaque */
+    display: flex;
+    flex-direction: column;
+}
+
+.mkt-gallery-container {
+    width: 100%;
+    position: relative;
+}
+
+/* Visualizador Principal */
+.mkt-image-viewer {
+    width: 100%;
+    height: 500px; /* Altura fixa para consistência */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.mkt-image-viewer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a imagem inteira apareça sem cortes */
+    transition: opacity 0.2s ease; /* Suaviza a troca */
+}
+
+/* Badge Vendido (Flutuante na Imagem) */
+.badge-vendido-float {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(228, 30, 63, 0.9);
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 800;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Setas de Navegação */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.2s ease;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.gallery-nav:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev { left: 15px; }
+.gallery-nav.next { right: 15px; }
+
+/* Faixa de Miniaturas (Thumbnails) */
+.mkt-thumbs-track {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: #fff; /* Fundo branco para as miniaturas */
+    border-top: 1px solid var(--mkt-border);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+/* Esconde a barra de rolagem das thumbs mas mantém funcionalidade */
+.mkt-thumbs-track::-webkit-scrollbar {
+    height: 6px;
+}
+.mkt-thumbs-track::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.mkt-thumb-item {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.mkt-thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mkt-thumb-item:hover {
+    opacity: 1;
+}
+
+.mkt-thumb-item.active {
+    opacity: 1;
+    border-color: var(--mkt-blue);
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+/* =========================================
+   3. SIDEBAR DE INFORMAÇÕES (DIREITA)
+   ========================================= */
+.mkt-sidebar-card {
+    padding: 20px;
+    position: sticky;
+    top: 20px; /* Mantém as info visíveis ao rolar */
+}
+
+/* Cabeçalho do Produto */
+.mkt-product-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--mkt-text-main);
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.mkt-product-price {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--mkt-text-main);
+}
+
+/* Lista de Especificações */
+.mkt-specs-list {
+    font-size: 0.95rem;
+}
+
+/* Descrição */
+.mkt-side-description h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--mkt-text-main);
+}
+
+.mkt-description-text {
+    font-size: 0.9rem;
+    color: var(--mkt-text-main);
+    line-height: 1.5;
+    white-space: pre-wrap; /* Respeita quebras de linha */
+    max-height: 200px; /* Limite inicial */
+    overflow-y: auto; /* Scroll se for muito grande */
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+.mkt-description-text::-webkit-scrollbar { width: 4px; }
+.mkt-description-text::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+/* Card do Vendedor */
+.mkt-seller-mini-card {
+    padding: 15px;
+    border: 1px solid var(--mkt-border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #fafafa;
+}
+
+.seller-avatar-large {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   4. BOTÕES E AÇÕES
+   ========================================= */
+.mkt-actions-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp-premium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background 0.2s;
+    border: none;
+    width: 100%;
+}
+.btn-whatsapp-premium:hover {
+    background-color: #1ebc57;
+}
+
+/* Botão Amei (Grande) */
+.btn-love-big {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background: var(--mkt-bg-body);
+    border: 1px solid var(--mkt-border);
+    border-radius: 6px;
+    color: var(--mkt-text-sub);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-love-big:hover {
+    background: #e4e6eb;
+}
+.btn-love-big.active {
+    background: #fff0f2; /* Fundo rosa claro */
+    border-color: #e41e3f;
+    color: #e41e3f;
+}
+
+/* Botão Interesse (Grande) */
+.btn-interest-big {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background: var(--mkt-bg-body);
+    border: 1px solid var(--mkt-border);
+    border-radius: 6px;
+    color: var(--mkt-text-sub);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-interest-big:hover {
+    background: #e4e6eb;
+}
+.btn-interest-big.active {
+    background: #f3e8ff; /* Roxo claro */
+    border-color: #9333ea;
+    color: #9333ea;
+}
+
+/* Botões do Painel do Dono */
+.mkt-owner-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-mkt-small {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: filter 0.2s;
+}
+.btn-mkt-small:hover { filter: brightness(0.95); }
+
+.btn-mkt-light { background: #e4e6eb; color: #050505; }
+.btn-mkt-blue { background: var(--mkt-blue-light); color: var(--mkt-blue); }
+.btn-mkt-delete { background: #fff; border: 1px solid #dddfe2; color: #e41e3f; margin-top: 5px; }
+
+/* Banner Item Vendido */
+.item-sold-banner {
+    background: #e4e6eb;
+    color: #65676b;
+    padding: 15px;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Texto de ajuda */
+.interest-help-text {
+    font-size: 0.8rem;
+    color: var(--mkt-text-sub);
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* =========================================
+   5. RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+    .mkt-detail-grid {
+        grid-template-columns: 1fr; /* Coluna única */
+        gap: 0;
+    }
+
+    /* Galeria no topo do mobile */
+    .mkt-main-card {
+        border-radius: 0; /* Cola nas bordas no mobile */
+        box-shadow: none;
+        background: #000;
+    }
+
+    .mkt-image-viewer {
+        height: 40vh; /* Altura menor no celular */
+    }
+
+    /* Ajuste das setas para toque */
+    .gallery-nav {
+        width: 36px;
+        height: 36px;
+        opacity: 0.8;
+    }
+    
+    /* Info abaixo */
+    .mkt-sidebar-card {
+        border-radius: 0;
+        box-shadow: none;
+        border-top: 1px solid var(--mkt-border);
+        position: static; /* Remove sticky no mobile */
+        padding-bottom: 80px; /* Espaço para menu inferior se houver */
+    }
+
+    .mkt-product-title { font-size: 1.3rem; }
+}

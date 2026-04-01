@@ -1,0 +1,268 @@
+/**
+ * assets/css/components/chat/_chat_midia_galeria.css
+ * Componente: Galeria de Mídia Local (Premium)
+ * PAPEL: Estilizar grades de fotos, vídeos e lista de áudios da conversa.
+ * VERSÃO: V1.2 (Power Boost: Visibilidade Total Desktop - socialbr.lol)
+ */
+
+:root {
+    --gallery-primary: #0C2D54; /* Cor Oficial SocialBR */
+    --gallery-bg: #f8fafc;
+    --gallery-card: #ffffff;
+    --gallery-border: rgba(12, 45, 84, 0.1);
+    --gallery-text: #1e293b;
+    --gallery-text-light: #64748b;
+}
+
+/* [POWER BOOST] Correção de Hierarquia Visual 
+   Garante que a Sidebar vença o cabeçalho principal do chat no Desktop.
+*/
+#chat-right-sidebar {
+    z-index: 200 !important;
+}
+
+/* 1. CONTAINER MESTRE */
+.chat-media-gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--gallery-bg);
+    overflow: hidden;
+    position: relative;
+    z-index: 201;
+}
+
+/* 2. HEADER PREMIUM */
+.media-gallery-header {
+    background: var(--gallery-card);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--gallery-border);
+    position: sticky;
+    top: 0;
+    z-index: 210;
+    min-height: 70px; /* Garante altura para não ser cortado */
+}
+
+/* FIX DEFINITIVO: Botão de voltar visível e clicável em todas as plataformas */
+.back-to-chat {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important; /* Força aparição no Desktop */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(12, 45, 84, 0.08) !important;
+    color: var(--gallery-primary) !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.back-to-chat:hover {
+    background: var(--gallery-primary) !important;
+    color: #ffffff !important;
+    transform: translateX(-2px);
+}
+
+.header-info h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--gallery-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-info span {
+    font-size: 0.85rem;
+    color: var(--gallery-text-light);
+}
+
+/* 3. NAVEGAÇÃO POR ABAS */
+.media-tabs {
+    display: flex;
+    background: var(--gallery-card);
+    padding: 5px 10px;
+    gap: 5px;
+    border-bottom: 1px solid var(--gallery-border);
+}
+
+.media-tab-btn {
+    flex: 1;
+    padding: 12px 5px;
+    border: none;
+    background: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gallery-text-light);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    outline: none;
+}
+
+.media-tab-btn i { font-size: 0.9rem; }
+
+.media-tab-btn.active {
+    background: rgba(12, 45, 84, 0.08);
+    color: var(--gallery-primary);
+}
+
+.media-tab-btn:hover:not(.active) {
+    background: rgba(12, 45, 84, 0.03);
+}
+
+/* 4. ÁREA DE CONTEÚDO */
+.media-content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.media-pane { display: none; }
+.media-pane.active { display: block; animation: galleryFadeIn 0.3s ease; }
+
+@keyframes galleryFadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. GRADES E LISTAS */
+
+/* 5.1 Fotos (Grid Premium) */
+.media-grid-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.media-item {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background: #e2e8f0;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.media-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.media-item:hover img { transform: scale(1.1); }
+
+/* 5.2 Vídeos */
+.media-grid-videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 45, 84, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: background 0.3s;
+}
+
+.video-overlay:hover { background: rgba(12, 45, 84, 0.5); }
+
+/* 5.3 Áudios (Lista de Luxo) */
+.media-list-audios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.audio-card {
+    background: var(--gallery-card);
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid var(--gallery-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.audio-info i {
+    width: 38px;
+    height: 38px;
+    background: var(--gallery-primary);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-info p { margin: 0; font-size: 0.9rem; font-weight: 700; color: var(--gallery-text); }
+.audio-info span { font-size: 0.75rem; color: var(--gallery-text-light); }
+
+.audio-card audio {
+    width: 100%;
+    height: 35px;
+}
+
+/* 6. ESTADOS VAZIOS */
+.media-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gallery-text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* 7. MODAL DE VÍDEO FULLSCREEN */
+.video-fullscreen-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.modal-close:hover { transform: scale(1.1); }
+
+/* 8. RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .media-grid-photos { grid-template-columns: repeat(2, 1fr); }
+    .media-gallery-header { padding: 10px 15px; min-height: 60px; }
+    .media-tab-btn { font-size: 0.75rem; padding: 10px 2px; }
+}

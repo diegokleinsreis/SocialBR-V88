@@ -1,0 +1,109 @@
+/* ==========================================================
+   assets/css/components/_feed_midia.css (V4.3)
+   SISTEMA DE GRADE COMPACTA - FOCO EM ENGAJAMENTO
+   ========================================================== */
+
+/* 1. Container Base do Grid (Otimizado para Visibilidade) */
+.post-media-grid {
+    display: grid !important;
+    gap: 4px !important;
+    width: 100% !important;
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+    max-height: 400px !important; /* Teto máximo para garantir visibilidade dos botões */
+}
+
+/* 2. Item de Mídia */
+.media-item-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 120px; /* Reduzido de 150px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.media-item-container img,
+.media-item-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.media-item-container:hover img {
+    transform: scale(1.03);
+}
+
+/* ==========================================================
+   VARIANTES DE LAYOUT COMPACTAS (3 MÍDIAS)
+   ========================================================== */
+
+/* A. LAYOUT HORIZONTAL (Compacto) */
+.post-media-grid.layout-h {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: 220px 140px !important; /* Altura total de 360px + gaps */
+}
+
+.post-media-grid.layout-h .media-item-container:first-child {
+    grid-column: span 2 !important;
+    grid-row: 1 !important;
+}
+
+/* B. LAYOUT VERTICAL (Compacto) */
+.post-media-grid.layout-v {
+    grid-template-columns: 1.3fr 1fr !important; 
+    grid-template-rows: 1fr 1fr !important;
+    height: 380px !important; /* Reduzido de 500px para priorizar botões */
+}
+
+.post-media-grid.layout-v .media-item-container:first-child {
+    grid-row: span 2 !important;
+    grid-column: 1 !important;
+}
+
+/* ==========================================================
+   GRIDS POR QUANTIDADE (OTIMIZADOS)
+   ========================================================== */
+
+/* Foto Única */
+.post-media-grid.grid-1 {
+    display: block !important;
+    max-height: 380px !important; /* Limite para não "empurrar" os botões */
+}
+
+.post-media-grid.grid-1 img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 380px !important;
+    object-fit: contain !important;
+}
+
+/* 2 Fotos (Lado a lado) */
+.post-media-grid.grid-2 {
+    grid-template-columns: 1fr 1fr !important;
+    height: 250px !important; /* Reduzido de 300px */
+}
+
+/* Overlay de "Ver Mais" */
+.media-more-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.8rem; font-weight: 800; z-index: 2;
+    pointer-events: none;
+}
+
+/* Vídeos (Garante que caiba no grid compacto) */
+.media-item-container video {
+    object-fit: contain !important;
+    background: #000;
+}

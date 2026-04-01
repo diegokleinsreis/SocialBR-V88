@@ -1,0 +1,9 @@
+/* ==========================================================
+   ARQUIVO CSS PRINCIPAL
+   ========================================================== */
+
+/* * NOTA: Todos os @import foram movidos para /templates/head_common.php
+ * para permitir o versionamento de cache (cache-busting)
+ * de forma mais eficaz. 
+ * Este arquivo é mantido para compatibilidade, mas está intencionalmente vazio.
+ */

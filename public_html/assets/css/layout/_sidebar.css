@@ -1,0 +1,250 @@
+/**
+ * assets/css/layout/_sidebar.css
+ * VERSÃO: V88.4 (Avatar Fix & Accordion Sync - socialbr.lol)
+ * PAPEL: Estilização da Barra Lateral com suporte a submenus, estados de bloqueio e avatares.
+ * CORREÇÃO: Restaurado controle dimensional da foto de perfil e expansão de submenus.
+ */
+
+:root {
+    --sidebar-largura-cheia: 252px;
+    --sidebar-largura-mini: 78px; 
+}
+
+.site-sidebar {
+    width: var(--sidebar-largura-cheia);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
+    flex-shrink: 0;
+    position: sticky;
+    top: 60px; 
+    height: calc(100vh - 60px); 
+    background-color: #fff; 
+    border-right: 1px solid #dddfe2;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    padding-bottom: 10px; 
+    z-index: 100;
+}
+
+.site-sidebar.recolhida {
+    width: var(--sidebar-largura-mini);
+}
+
+.site-sidebar::-webkit-scrollbar { display: none; }
+
+/* --- HEADER DE CONTROLE (BOTÃO TOGGLE) --- */
+.sidebar-header-controle {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 12px;
+}
+
+.site-sidebar.recolhida .sidebar-header-controle {
+    justify-content: center;
+}
+
+.btn-sidebar-toggle {
+    background: #f0f2f5;
+    border: 1px solid #dddfe2;
+    color: #0c2d54;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-sidebar-toggle:hover {
+    background: #0c2d54;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.site-sidebar.recolhida #icone-sidebar {
+    transform: rotate(180deg);
+}
+
+/* --- LINKS E NAVEGAÇÃO --- */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #050505;
+    font-weight: 600;
+    transition: background-color 0.2s, padding 0.3s;
+    white-space: nowrap; 
+}
+
+.site-sidebar.recolhida .sidebar-nav li a {
+    padding: 7px 0;
+    justify-content: center;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #f2f3f5;
+}
+
+/* --- ÍCONES --- */
+.sidebar-nav .nav-icon {
+    font-size: 1.25em;
+    width: 38px;
+    height: 28px; 
+    text-align: center;
+    margin-right: 15px;
+    color: #0c2d54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: margin 0.3s;
+    position: relative; 
+}
+
+.site-sidebar.recolhida .nav-icon {
+    margin-right: 0;
+}
+
+/* --- BLOCO DO AVATAR (RESTAURADO E BLINDADO) --- */
+.nav-avatar {
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.nav-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Impede distorção da foto */
+    display: block;
+}
+
+/* --- TEXTOS --- */
+.sidebar-nav .nav-text {
+    opacity: 1;
+    transition: opacity 0.2s ease, width 0.3s;
+    overflow: hidden;
+    font-size: 0.92rem;
+}
+
+.site-sidebar.recolhida .nav-text,
+.site-sidebar.recolhida .dropdown-arrow {
+    opacity: 0;
+    width: 0;
+    display: none; 
+}
+
+.sidebar-nav hr {
+    border: none;
+    border-top: 1px solid #dddfe2;
+    margin: 5px 15px;
+}
+
+/* --- DROPDOWNS E SUBMENUS --- */
+.sidebar-nav .dropdown-arrow {
+    margin-left: auto; 
+    font-size: 0.8em;
+    color: #606770;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav .nav-link-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg); 
+}
+
+.sidebar-nav .nav-submenu {
+    list-style: none;
+    padding: 0 0 0 45px; 
+    margin: 0;
+    overflow: hidden;
+    max-height: 0; 
+    transition: max-height 0.3s ease-out; 
+}
+
+/* Regra vital para o JavaScript expandir o menu */
+.sidebar-nav .nav-submenu:not(.is-hidden) {
+    max-height: 500px; 
+}
+
+.site-sidebar.recolhida .nav-submenu {
+    display: none !important;
+}
+
+/* --- ESTADOS DE BLOQUEIO (VISUAL SHIELD) --- */
+.nav-item-disabled {
+    filter: grayscale(1);
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lock-indicator {
+    margin-left: 8px;
+    font-size: 0.7rem;
+    color: #606770;
+}
+
+/* --- NOTIFICAÇÃO DO CHAT --- */
+.chat-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ef4444; 
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff; 
+    z-index: 5;
+}
+
+/* --- DARK MODE GERAL --- */
+html.dark-mode .site-sidebar { background-color: #1c1e21; border-color: #3e4042; }
+html.dark-mode .sidebar-nav li a { color: #e4e6eb; }
+html.dark-mode .sidebar-nav li a:hover { background-color: #303030; }
+html.dark-mode .sidebar-nav .nav-icon { color: #fff; }
+html.dark-mode .btn-sidebar-toggle { background: #3a3b3c; border-color: #4e4f50; color: #fff; }
+html.dark-mode .sidebar-nav hr { border-top-color: #3e4042; }
+html.dark-mode .lock-indicator { color: #b0b3b8; }
+
+/* ==========================================================
+   MOBILE NAV UI (mobile_nav.php)
+   ========================================================== */
+
+.mobile-nav-panel .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #0c2d54;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+    z-index: 1010;
+}
+
+.mobile-nav-panel .close-btn:hover { transform: scale(1.1); opacity: 0.7; }
+html.dark-mode .mobile-nav-panel .close-btn { color: #fff; }
+
+.mobile-nav-panel {
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.mobile-nav-panel::-webkit-scrollbar { display: none; }

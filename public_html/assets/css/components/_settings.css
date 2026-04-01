@@ -1,0 +1,246 @@
+/* ==========================================================
+    ESTILOS PARA A PÁGINA DE CONFIGURAÇÕES (configurar_perfil.php)
+    V72.0 - Arquitetura Limpa (Aviso movido para Template Atómico)
+    ========================================================== */
+
+/* Forçar reset de alinhamento e box-sizing para evitar conflitos */
+.settings-card, 
+.settings-card form,
+.settings-card div {
+    display: block; 
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.settings-card {
+    background-color: var(--cor-fundo-secundario, #fff);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 25px;
+    border: 1px solid var(--cor-borda, #e4e6eb);
+    width: 100%;
+}
+
+.settings-card h2 {
+    font-size: 1.3em;
+    color: var(--cor-texto-primario, #0c2d54);
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--cor-borda, #e4e6eb);
+    display: flex;
+    align-items: center;
+}
+
+.settings-card h2 i {
+    margin-right: 12px;
+    font-size: 0.9em;
+}
+
+/* --- NAVEGAÇÃO POR ABAS --- */
+.settings-tabs-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--cor-borda, #e4e6eb);
+    padding-bottom: 5px;
+    overflow-x: auto;
+    text-align: left;
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: var(--cor-texto-secundario, #606770);
+    font-weight: 600;
+    font-size: 0.95em;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-link:hover {
+    background-color: var(--cor-fundo-hover, #f0f2f5);
+    color: var(--cor-texto-primario, #050505);
+}
+
+.tab-link.active {
+    color: #1877f2;
+    border-bottom-color: #1877f2;
+    background-color: rgba(24, 119, 242, 0.05);
+}
+
+/* --- FORMULÁRIOS --- */
+.settings-card .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+.settings-card label {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--cor-texto-primario, #333);
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.settings-card input[type="text"],
+.settings-card input[type="email"],
+.settings-card input[type="date"],
+.settings-card input[type="password"],
+.settings-card select,
+.settings-card textarea {
+    width: 100% !important;
+    padding: 11px;
+    border-radius: 6px;
+    background-color: var(--cor-fundo-hover, #f0f2f5);
+    border: 1px solid var(--cor-borda, #dddfe2);
+    color: var(--cor-texto-primario, #050505);
+    font-size: 1em;
+    font-family: inherit;
+    box-sizing: border-box;
+    display: block;
+}
+
+.settings-card .form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.settings-card .form-row .form-group {
+    flex: 1;
+}
+
+.settings-card .form-actions-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* --- COMPONENTES ADICIONAIS --- */
+.settings-card hr {
+    border: none;
+    border-top: 1px solid var(--cor-borda, #e4e6eb);
+    margin: 30px 0;
+}
+
+.form-group-description {
+    font-size: 0.9em;
+    color: var(--cor-texto-secundario, #606770);
+    margin-top: 5px;
+    display: block;
+}
+
+/* Switches */
+.switch-group {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda, #f0f2f5);
+    display: block;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px; width: 20px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #0c2d54; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* Zona de Perigo */
+.danger-zone { border: 1px solid #f5c6cb; }
+.danger-zone h2 { color: #721c24; }
+.danger-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.danger-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Bloqueados */
+.blocked-user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cor-borda, #f0f2f5);
+}
+
+.secondary-btn-small {
+    background-color: var(--cor-fundo-hover, #e4e6eb);
+    color: var(--cor-texto-primario, #050505);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- MÓDULO DE SEGURANÇA (SELOS DE STATUS) --- */
+
+.settings-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-badge.verified { background: #e8f5e9; color: #2e7d32; }
+.status-badge.unverified { background: #fff3e0; color: #ef6c00; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .settings-card .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

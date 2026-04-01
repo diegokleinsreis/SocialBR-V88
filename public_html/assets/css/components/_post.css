@@ -1,0 +1,649 @@
+/* ==========================================================
+   public_html/assets/css/components/_post.css (V109.0)
+   CONSOLIDADO: Base Social + Compactação Marketplace (UX Pro).
+   LIMPEZA: Regras de Grade movidas para _feed_midia.css.
+   ========================================================== */
+
+/* --- ESTRUTURA DO CARTÃO --- */
+.post-card, .create-post-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 12px; /* Reduzido de 20px para compactar o post */
+    box-sizing: border-box;
+    /* [V105] Proteção contra overflow horizontal no mobile */
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* --- FORMULÁRIO DE CRIAÇÃO --- */
+.create-post-card textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 1em;
+    font-family: inherit;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.create-post-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* --- ÁREA DE PREVIEW E OPÇÕES --- */
+.media-preview-area {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e4e6eb;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.media-preview-area.is-hidden {
+    display: none;
+}
+
+.gallery-option-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.gallery-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    color: #050505;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+}
+
+.gallery-checkbox-wrapper input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    -webkit-appearance: checkbox;
+    appearance: checkbox;
+}
+
+.gallery-checkbox-wrapper label {
+    cursor: pointer;
+}
+
+.media-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.media-preview-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f0f2f5;
+    border: 1px solid #dddfe2;
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+    .media-preview-item {
+        padding-top: 100%;
+    }
+}
+
+.media-preview-item img,
+.media-preview-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.create-post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+/* --- CABEÇALHO DO POST --- */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Reduzido de 15px para compactar */
+}
+
+.post-author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.post-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-author-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.post-author-name {
+    font-weight: bold;
+    color: #050505;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-author-name-link {
+    text-decoration: none;
+}
+
+.post-author-name-link:hover .post-author-name {
+    text-decoration: underline;
+}
+
+.post-timestamp {
+    font-size: 0.8em;
+    color: #606770;
+}
+
+/* ==========================================================
+   INTEGRAÇÃO MARKETPLACE COMPACTA (V108.0)
+   ========================================================== */
+
+.mkt-media-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mkt-floating-price {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(26, 127, 55, 0.95);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    pointer-events: none;
+}
+
+.mkt-post-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #050505;
+    margin-bottom: 6px;
+    display: block;
+    line-height: 1.3;
+}
+
+.mkt-post-description-block {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4b4b4b;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.mkt-post-desc-label {
+    font-weight: 700;
+    color: #65676b;
+    margin-right: 5px;
+}
+
+.mkt-post-badge-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 4px;
+}
+
+.mkt-meta-row-compact {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f2f5;
+    align-items: center;
+}
+
+.mkt-meta-item-small {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #65676b;
+}
+
+.mkt-meta-item-small i {
+    color: #1877f2;
+}
+
+.btn-mkt-compact-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    background: #e7f3ff;
+    color: #1877f2 !important;
+    text-decoration: none !important;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+.btn-mkt-compact-action:hover {
+    background: #dbeafe;
+}
+
+
+/* --- CONTEÚDO DE TEXTO SOCIAL --- */
+.post-content p {
+    margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+    user-select: text;
+}
+
+.post-content-short, .post-content-full {
+    cursor: pointer;
+}
+
+.see-more-link {
+    font-weight: bold;
+    color: #606770;
+    font-size: 0.9em;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.see-more-link:hover {
+    text-decoration: underline;
+}
+
+/* --- RODAPÉ DO POST (ESTATÍSTICAS) --- */
+.post-stats {
+    padding: 10px 0;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+.post-stats-link {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: #606770;
+    font-size: 0.9em;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    transition: color 0.2s;
+}
+
+.post-stats-link:hover {
+    color: #444;
+}
+
+.post-stats-link:hover span {
+    text-decoration: underline;
+}
+
+/* --- BOTÕES DE AÇÃO --- */
+.post-actions {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #606770;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 0.9em;
+    padding: 10px 5px; 
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    min-width: 80px;
+}
+
+.action-btn:hover {
+    background-color: #f0f2f5;
+}
+
+.action-btn.like-btn.active,
+.action-btn.btn-compartilhar.active {
+    color: #0866FF;
+}
+
+/* --- MENU DE OPÇÕES (...) --- */
+.post-options {
+    position: relative;
+    margin-left: auto;
+}
+
+.post-options-btn {
+    background-color: transparent;
+    border: none;
+    color: #606770;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.post-options-btn:hover {
+    background-color: #f0f2f5;
+}
+
+.post-options-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 4px 0;
+    width: 180px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+}
+
+.post-options-menu.is-hidden {
+    display: none;
+}
+
+.post-options-menu a {
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #050505;
+    font-size: 0.8em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post-options-menu a:hover {
+    background-color: #f0f2f5;
+}
+
+/* --- MODO DE EDIÇÃO --- */
+.post-edit-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 1em;
+    font-family: inherit;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.post-edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.post-edit-cancel-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    width: auto;
+    background-color: #e4e6eb;
+    color: #050505;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.post-edit-cancel-btn:hover {
+    background-color: #d8dbdf;
+}
+
+/* --- INPUT DE ARQUIVO CUSTOMIZADO --- */
+.input-file {
+    display: none;
+}
+
+.input-file-label {
+    background-color: #e4e6eb;
+    color: #050505;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+.input-file-label:hover {
+    background-color: #d8dbdf;
+}
+
+.input-file-label i {
+    margin-right: 8px;
+    color: #0c2d54;
+}
+
+.file-name-display {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8em;
+    color: #606770;
+    font-style: italic;
+}
+
+/* --- SELETOR DE PRIVACIDADE --- */
+.privacy-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.privacy-selector-button {
+    background-color: #e4e6eb;
+    color: #050505;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.privacy-selector-button i.fa-caret-down {
+    font-size: 1.1em;
+}
+
+.privacy-selector-dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--cor-fundo-card, #fff);
+    border: 1px solid var(--cor-borda, #ddd);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 200px;
+    z-index: 10;
+    padding: 5px;
+}
+
+.privacy-selector.is-active .privacy-selector-dropdown {
+    display: block;
+}
+
+.privacy-selector-dropdown .privacy-option {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.privacy-selector-dropdown .privacy-option:hover {
+    background-color: #f0f2f5;
+}
+
+.privacy-option-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e4e6eb;
+    color: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+/* --- COMPARTILHAMENTOS --- */
+.post-action-text {
+    color: #606770;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+.shared-post-wrapper {
+    border: 1px solid #e4e6eb;
+    border-radius: 12px;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fafbfc;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.shared-post-wrapper .post-header {
+    margin-bottom: 12px;
+}
+
+.shared-post-wrapper .post-author-avatar {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.shared-post-wrapper .post-author-name {
+    font-size: 0.95em;
+    color: #1c1e21;
+}
+
+.shared-post-wrapper .post-timestamp {
+    font-size: 0.75em;
+    color: #65676b;
+}
+
+.post-content-original {
+    margin-bottom: 15px;
+}
+
+.post-content-original p {
+    font-size: 0.95em;
+    line-height: 1.45;
+    color: #1c1e21;
+}
+
+/* ==========================================================
+   MODO ESCURO (SUPORTE BÁSICO E PREMIUM)
+   ========================================================== */
+:root.dark-mode .post-action-text {
+    color: #b0b3b8;
+}
+:root.dark-mode .shared-post-wrapper {
+    background-color: #1c1e21;
+    border-color: #3e4042;
+}
+:root.dark-mode .post-content-original p {
+    color: #e4e6eb;
+}
+:root.dark-mode .action-btn.btn-compartilhar.active {
+    color: #4599ff;
+}
+
+.dark-mode .post-card, .dark-mode .create-post-card {
+    background-color: #242526;
+    color: #e4e6eb;
+}
+.dark-mode .post-author-name { color: #e4e6eb; }
+.dark-mode .post-timestamp { color: #b0b3b8; }
+.dark-mode .post-stats { border-bottom-color: #3e4042; }
+.dark-mode .post-stats-link { color: #b0b3b8; }
+.dark-mode .post-stats-link:hover { color: #e4e6eb; }
+
+:root.dark-mode .mkt-post-title {
+    color: #e4e6eb;
+}
+:root.dark-mode .mkt-post-desc-label {
+    color: #b0b3b8;
+}
+:root.dark-mode .mkt-meta-row-compact {
+    border-top-color: #3e4042;
+}
+:root.dark-mode .btn-mkt-compact-action {
+    background: #303031;
+    color: #4599ff !important;
+}

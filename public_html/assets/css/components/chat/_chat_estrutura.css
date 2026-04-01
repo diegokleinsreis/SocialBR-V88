@@ -1,0 +1,199 @@
+/**
+ * assets/css/components/chat/_chat_estrutura.css
+ * Componente: Estrutura Base e Layout (Skeleton).
+ * PAPEL: Definir contenção em Card, centralização e suporte SPA com painéis expansíveis.
+ * VERSÃO: V63.6 (Fix: Mobile Gap & Header Alignment - socialbr.lol)
+ */
+
+ :root {
+    /* Variáveis de Identidade Visual socialbr.lol */
+    --chat-primary: #0C2D54;
+    --chat-bg-card: #ffffff;
+    --chat-bg-sidebar: #f9fafb;
+    --chat-border: #e5e7eb;
+    --chat-text: #1f2937;
+    --chat-text-sub: #6b7280;
+    --chat-shadow: 0 10px 40px rgba(0, 0, 0, 0.12); /* Sombra profunda para efeito flutuante */
+    
+    /* [V63.4] Altura do Header do Site ajustada para 85px para evitar cortes no cabeçalho */
+    --site-header-height: 85px; 
+    --chat-card-radius: 16px; /* Raio de arredondamento premium */
+}
+
+/* SUPORTE AO MODO ESCURO */
+body.dark-mode {
+    --chat-bg-card: #1a202c;
+    --chat-bg-sidebar: #121720;
+    --chat-border: #2d3748;
+    --chat-text: #f7fafc;
+    --chat-text-sub: #a0aec0;
+    --chat-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 1. ESTRUTURA SPA (Layout Boxed)
+    Garante a centralização do card no meio da página no Desktop.
+    [V63.3] Adicionado Box-Sizing global para evitar bordas cortadas.
+*/
+.chat-main-container, 
+.chat-main-container * {
+    box-sizing: border-box !important;
+}
+
+.chat-main-container {
+    height: calc(100vh - var(--site-header-height)) !important;
+    height: calc(100dvh - var(--site-header-height)) !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centralização Vertical no Desktop */
+    align-items: center;     /* Centralização Horizontal */
+    overflow: hidden !important; 
+    padding: 20px !important; /* Respiro lateral para destacar o card flutuando */
+    background-color: #f0f2f5; /* Cor de fundo para destacar o card branco */
+}
+
+body.dark-mode .chat-main-container {
+    background-color: #0f172a;
+}
+
+/* 2. WRAPPER DE CONTEÚDO 
+    Limita a largura máxima para manter o aspecto de software profissional.
+*/
+.chat-app-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1400px; /* Largura máxima controlada */
+    height: 100%;
+    position: relative;
+}
+
+/* 3. O CARD DO CHAT (ESTILO PREMIUM)
+    Aplica o encapsulamento com bordas arredondadas e sombra.
+*/
+.chat-app-card {
+    display: flex;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--chat-bg-card);
+    border-radius: var(--chat-card-radius) !important; /* Borda arredondada */
+    box-shadow: var(--chat-shadow) !important;        /* Efeito de profundidade */
+    /* [V63.4] Moldura reforçada (2px) com a cor padrão oficial do site */
+    border: 1px solid var(--chat-primary) !important; 
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+/* COLUNA ESQUERDA: LISTA DE CONVERSAS */
+.chat-sidebar-list {
+    width: 380px; 
+    min-width: 380px;
+    background: var(--chat-bg-sidebar);
+    border-right: 1px solid var(--chat-border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 20;
+}
+
+/* COLUNA DIREITA: JANELA DE MENSAGENS ATIVA */
+.chat-main-window {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--chat-bg-card);
+    position: relative;
+    overflow: hidden;
+    z-index: 30;
+}
+
+/**
+ * 4. PAINEL DIREITO EXPANSÍVEL (#chat-right-sidebar)
+ * [V63.5] Ajustado para ocupar 100% da janela principal no Desktop.
+ */
+#chat-right-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; /* Ocupa toda a parte do chat */
+    height: 100%;
+    background: var(--chat-bg-card);
+    z-index: 40;
+    border-left: 1px solid var(--chat-border);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-right-sidebar.is-active {
+    transform: translateX(0);
+}
+
+/* 5. RESPONSIVIDADE MOBILE (Imersão Total) */
+@media (max-width: 768px) {
+    .chat-main-container {
+        /* FIX: Sincronizado com a variável global para eliminar vácuo no topo */
+        height: calc(100dvh - var(--site-header-height)) !important; 
+        /* FIX: Garante que o conteúdo cole no header em vez de centralizar verticalmente */
+        justify-content: flex-start !important; 
+        padding: 0 !important; 
+    }
+
+    .chat-app-card {
+        border-radius: 0 !important; 
+        box-shadow: none !important;  
+        border: none !important;
+    }
+
+    .chat-sidebar-list {
+        width: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .chat-main-window {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #chat-right-sidebar {
+        z-index: 100; /* No mobile, cobre tudo para SPA real */
+    }
+
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+/* UTILITÁRIOS DE LUXO */
+.is-hidden { display: none !important; }
+.text-danger { color: #e53e3e !important; }
+
+/* Scrollbar Minimalista para Estética Premium */
+.chat-list-scrollable::-webkit-scrollbar,
+.chat-messages-area::-webkit-scrollbar,
+#chat-right-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-list-scrollable::-webkit-scrollbar-thumb,
+.chat-messages-area::-webkit-scrollbar-thumb,
+#chat-right-sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+}
+
+body.dark-mode .chat-list-scrollable::-webkit-scrollbar-thumb,
+body.dark-mode .chat-messages-area::-webkit-scrollbar-thumb,
+body.dark-mode #chat-right-sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.08);
+}

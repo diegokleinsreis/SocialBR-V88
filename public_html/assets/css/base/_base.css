@@ -1,0 +1,124 @@
+/* --- NOVA REGRA ADICIONADA --- */
+html {
+    /* Define o tamanho da fonte base do site para 15px (padrão é 16px) */
+    /* Isto irá "diminuir o zoom" de todo o site ligeiramente */
+    font-size: 16px;
+}
+/* --- FIM DA NOVA REGRA --- */
+
+/* --- [ INÍCIO DA PERSONALIZAÇÃO GLOBAL DA BARRA DE ROLAGEM ] --- */
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Fundo da barra (Track) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Cor da barra (Thumb) - USANDO A COR OFICIAL DO SITE */
+::-webkit-scrollbar-thumb {
+    background: #0c2d54; 
+    border-radius: 10px;
+}
+
+/* Cor ao passar o rato (Hover) */
+::-webkit-scrollbar-thumb:hover {
+    background: #0a2444;
+}
+
+/* Suporte para Firefox (Propriedades padrão) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #0c2d54 #f1f1f1;
+}
+/* --- [ FIM DA PERSONALIZAÇÃO GLOBAL ] --- */
+
+/* Estilos Globais, fontes, reset básico */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+
+    /* --- [ INÍCIO DA MODIFICAÇÃO ] --- */
+    /* Impede a seleção de texto (e o cursor piscando) em elementos não-textuais */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10+ */
+    user-select: none;         /* Padrão */
+    /* --- [ FIM DA MODIFICAÇÃO ] --- */
+}
+
+h1 {
+    color: #0c2d54;
+    margin: 0 0 5px 0;
+    font-size: 2em;
+    line-height: 1.1;
+}
+h2 {
+    color: #606770;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Classes de utilidade geral */
+.is-hidden {
+    display: none !important;
+}
+
+/* Botões */
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #0c2d54;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.primary-btn:hover {
+    background-color: #0a2444;
+}
+.primary-btn-small {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    width: auto;
+    background-color: #0c2d54;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color: 0.3s;
+}
+.primary-btn-small:hover {
+    background-color: #0a2444;
+}
+
+/* Mensagens de Erro/Sucesso */
+.error-message, .success-message {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 0.9em;
+}
+.error-message {
+    background-color: #fbe0e0;
+    color: #8a1717;
+    border: 1px solid #e8b3b3;
+}
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}

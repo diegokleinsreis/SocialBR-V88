@@ -1,0 +1,46 @@
+/**
+ * assets/css/components/_feed.css
+ * PAPEL: Estilização exclusiva do Feed Principal e Scroll Infinito.
+ * VERSÃO: 1.0 (socialbr.lol)
+ */
+
+/* --- ESTILOS DO SCROLL INFINITO --- */
+/* Mantidos aqui por serem exclusivos da funcionalidade de feed */
+.infinite-scroll-sentinel {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    clear: both;
+}
+
+.infinite-scroll-sentinel .spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: var(--cor-primaria, #0866FF);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none; 
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.no-more-posts {
+    text-align: center;
+    color: #65676b;
+    padding: 20px;
+    font-size: 0.9em;
+    display: none;
+    width: 100%;
+}
+
+/* Ajuste fino para o container do feed */
+.feed-container {
+    flex: 1;
+    max-width: 600px;
+    padding: 0 10px 20px 10px;
+}

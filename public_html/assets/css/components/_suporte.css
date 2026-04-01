@@ -1,0 +1,133 @@
+/**
+ * assets/css/components/_suporte.css
+ * VERSÃO: V1.0 (Refinamento Visual do Módulo Suporte)
+ * PAPEL: Estilização atómica, remoção de sublinhados e polimento de UI.
+ * COR PADRÃO: #0C2D54
+ */
+
+/* 1. RESET DE LINKS E NAVEGAÇÃO */
+.suporte-container a {
+    text-decoration: none !important; /* Remoção global de sublinhados no módulo */
+    transition: opacity 0.2s ease;
+}
+
+.suporte-container a:hover {
+    opacity: 0.8;
+}
+
+/* 2. ESTRUTURA DO CONTAINER MASTER */
+.suporte-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #dddfe2;
+}
+
+/* 3. CABEÇALHO DO MÓDULO */
+.suporte-header-master {
+    background-color: #0C2D54;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.suporte-header-master h1 {
+    color: #ffffff !important;
+    font-size: 1.4rem !important;
+    margin: 0 !important;
+}
+
+/* 4. LISTA DE HISTÓRICO (TABELAS) */
+.suporte-historico-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.suporte-historico-wrapper th {
+    border-bottom: 2px solid #f0f2f5;
+    padding: 12px;
+    font-size: 0.85rem;
+    color: #606770;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.suporte-historico-wrapper td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #f0f2f5;
+    vertical-align: middle;
+}
+
+/* 5. BOLHAS DE CONVERSA (TIMELINE) */
+.suporte-timeline {
+    padding: 10px 0;
+}
+
+/* Mensagem do Utilizador */
+.msg-usuario {
+    background-color: #0C2D54;
+    color: #ffffff;
+    align-self: flex-end;
+    border-radius: 15px 15px 2px 15px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Mensagem do Suporte/Admin */
+.msg-suporte {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 2px;
+    padding: 12px 16px;
+    border: 1px solid #dddfe2;
+}
+
+/* 6. DIAGNÓSTICO E STATUS */
+.diagnostico-badge {
+    background: #eef3ff;
+    border-left: 4px solid #0C2D54;
+    padding: 10px;
+    border-radius: 0 6px 6px 0;
+    font-family: 'Courier New', Courier, monospace; /* Tom técnico */
+}
+
+/* Badges de Status Personalizados */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-aberto { background: #e1f5fe; color: #01579b; }
+.status-andamento { background: #fff3e0; color: #e65100; }
+.status-resolvido { background: #e8f5e9; color: #1b5e20; }
+
+/* 7. FORMULÁRIOS E INPUTS */
+.suporte-form-wrapper input[type="text"],
+.suporte-form-wrapper select,
+.suporte-form-wrapper textarea {
+    border: 1px solid #dddfe2;
+    transition: border-color 0.2s;
+}
+
+.suporte-form-wrapper input:focus,
+.suporte-form-wrapper textarea:focus {
+    border-color: #0C2D54;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(12, 45, 84, 0.1);
+}
+
+/* 8. RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    .suporte-header-master {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .suporte-header-master .primary-btn-small {
+        width: 100%;
+    }
+}

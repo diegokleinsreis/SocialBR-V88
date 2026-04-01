@@ -1,0 +1,284 @@
+/**
+ * _pesquisa_premium.css - Identidade Visual de Busca socialbr.lol
+ * VERSÃO: 1.2 (Arquitetura Atômica - Suporte a Histórico Enriquecido com Fotos)
+ * COR PADRÃO: #0C2D54
+ */
+
+/* ==========================================================================
+   1. ESTILO DO DROPDOWN (Busca Rápida)
+   ========================================================================== */
+.search-wrapper {
+    position: relative; /* Pai do dropdown */
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 999;
+    max-height: 450px;
+    overflow-y: auto;
+    display: none; /* Controlado via JS */
+    border: 1px solid #e1e8ed;
+    margin-top: 5px;
+}
+
+.search-dropdown.active {
+    display: block;
+}
+
+.dropdown-header {
+    padding: 10px 15px;
+    background: #f8f9fa;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #65676b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #1c1e21;
+    gap: 12px;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #f0f2f5;
+}
+
+.dropdown-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.dropdown-subtitle {
+    font-size: 0.8rem;
+    color: #65676b;
+}
+
+/* Divisor de categorias (Pessoas, Grupos, etc) */
+.dropdown-category-divider {
+    padding: 8px 15px;
+    background: #f0f2f5;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #0C2D54;
+    border-top: 1px solid #e1e8ed;
+}
+
+/* ==========================================================================
+   2. PÁGINA DE RESULTADOS (Layout Principal)
+   ========================================================================== */
+.pagina-pesquisa {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sidebar de filtros + Resultados */
+    gap: 30px;
+}
+
+/* Responsividade da Página */
+@media (max-width: 850px) {
+    .pagina-pesquisa {
+        grid-template-columns: 1fr;
+    }
+}
+
+.resultados-header {
+    margin-bottom: 25px;
+}
+
+.resultados-header h1 {
+    font-size: 1.5rem;
+    color: #0C2D54; /* Cor Oficial */
+    margin-bottom: 5px;
+}
+
+.resultados-header p {
+    color: #65676b;
+}
+
+.resultados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+/* Para posts, usamos uma coluna única para melhor leitura */
+.resultados-lista-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   3. SKELETON LOADING (Efeito de Carregamento)
+   ========================================================================== */
+.skeleton-item {
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.skeleton-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f0f2f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-line {
+    height: 12px;
+    background: #f0f2f5;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-line.short { width: 40%; }
+.skeleton-line.med { width: 70%; }
+
+/* Animação de brilho (Shimmer) */
+.skeleton-circle::after,
+.skeleton-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% { left: 100%; }
+}
+
+/* ==========================================================================
+   4. ESTADOS VAZIOS E FEEDBACK
+   ========================================================================== */
+.busca-vazia {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px dashed #e1e8ed;
+}
+
+.busca-vazia i {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 15px;
+}
+
+.busca-vazia h2 {
+    color: #0C2D54;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   5. BUSCAS RECENTES (Histórico Inteligente)
+   ========================================================================== */
+.history-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 12px;
+    color: #1c1e21;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.history-item:hover {
+    background: #f0f2f5;
+}
+
+/* Estilo para termos simples (Ícone de Relógio) */
+.history-icon {
+    width: 36px;
+    height: 36px;
+    background: #f0f2f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #65676b;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Estilo para Perfis/Grupos (Fotos Reais) */
+.history-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; /* Mantém redondo estilo Facebook */
+    object-fit: cover;
+    background: #f0f2f5;
+    flex-shrink: 0;
+}
+
+.history-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.history-text {
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Pequeno rótulo do tipo de entidade */
+.history-type-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #8a8d91;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-top: -2px;
+}
+
+.history-item:hover .history-icon {
+    background: #e4e6eb;
+    color: #0C2D54;
+}
+
+.history-item:hover .history-text {
+    color: #000;
+}

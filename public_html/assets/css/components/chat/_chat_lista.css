@@ -1,0 +1,267 @@
+/**
+ * assets/css/components/chat/_chat_lista.css
+ * Componente: Estilização da Lista de Conversas e Busca.
+ * PAPEL: Gerir a identidade visual dos itens da lista e notificações.
+ * VERSÃO: V52.1 (Ação 4 Masterplan - socialbr.lol)
+ */
+
+/* 1. CABEÇALHO DA SIDEBAR E BUSCA */
+.chat-sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--chat-border);
+}
+
+/* Organização da linha de topo (Título + Botão Nova Conversa) */
+.chat-sidebar-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.chat-sidebar-title h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Botão Circular de Ação (Plus) */
+.chat-action-circle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(12, 45, 84, 0.1);
+    color: var(--chat-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chat-action-circle-btn:hover {
+    background: var(--chat-primary);
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+/* Container de Busca com Botão Físico */
+.chat-search-wrapper {
+    width: 100%;
+}
+
+.chat-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--chat-bg-card);
+    border: 1px solid var(--chat-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.chat-search-container:focus-within {
+    border-color: var(--chat-primary);
+    box-shadow: 0 0 0 2px rgba(12, 45, 84, 0.1);
+}
+
+.chat-search-container input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 15px;
+    color: var(--chat-text);
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.chat-search-btn-trigger {
+    background: none;
+    border: none;
+    padding: 0 15px;
+    color: var(--chat-text-sub);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.chat-search-btn-trigger:hover {
+    color: var(--chat-primary);
+}
+
+/* 2. LISTA SCROLLABLE */
+.chat-list-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--chat-border) transparent;
+}
+
+/* 3. ITEM DA CONVERSA (THEME-AWARE) */
+.chat-item {
+    display: flex;
+    padding: 15px;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid var(--chat-border);
+    position: relative;
+}
+
+.chat-item:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode .chat-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chat-item.is-active {
+    background: rgba(12, 45, 84, 0.08);
+    border-left: 4px solid var(--chat-primary);
+}
+
+/* 4. AVATAR E STATUS */
+.chat-item-avatar {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.chat-item-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    background: #10b981; /* Verde Online */
+    border: 2px solid var(--chat-bg-sidebar);
+    border-radius: 50%;
+}
+
+/* 5. INFO E BADGES */
+.chat-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.chat-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.chat-item-name {
+    font-weight: 600;
+    color: var(--chat-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-item-time {
+    font-size: 0.75rem;
+    color: var(--chat-text-sub);
+}
+
+.chat-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-item-preview {
+    font-size: 0.85rem;
+    color: var(--chat-text-sub);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ESTADO DE NÃO LIDA */
+.chat-item.has-unread .chat-item-name {
+    font-weight: 800;
+}
+
+.chat-item.has-unread .chat-item-preview {
+    color: var(--chat-text);
+    font-weight: 500;
+}
+
+.chat-item-badges {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.unread-badge {
+    background: var(--chat-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.icon-muted, .icon-pinned {
+    font-size: 0.8rem;
+    color: var(--chat-text-sub);
+}
+
+/* 6. ESTADO VAZIO PREMIUM DA LISTA (Ação 4) */
+.chat-list-empty-premium {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.empty-list-icon {
+    font-size: 3rem;
+    color: var(--chat-border);
+    margin-bottom: 10px;
+}
+
+.chat-list-empty-premium p {
+    color: var(--chat-text-sub);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.chat-new-start-btn {
+    background: var(--chat-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.chat-new-start-btn:hover {
+    opacity: 0.9;
+}
+
+/* MODO ESCURO: AJUSTES FINOS */
+body.dark-mode .chat-list-scrollable::-webkit-scrollbar-thumb {
+    background: var(--chat-border);
+}
+
+body.dark-mode .chat-action-circle-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}

@@ -1,0 +1,470 @@
+/**
+ * assets/css/components/chat/_chat_conversa.css
+ * Componente: Estilização da Janela de Conversa e Balões.
+ * PAPEL: Gerir timeline, Balões de Mensagem e Suporte a Overlays de Contexto.
+ * VERSÃO: V68.8 (Lightbox Chat Mode & Download Button - socialbr.lol)
+ */
+
+/* 0. ESTRUTURA MESTRE (DNA CheckYou) */
+.chat-window-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--chat-bg-card);
+}
+
+.chat-view-flex {
+    display: flex;
+    flex-direction: column; 
+}
+
+.chat-view-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    min-width: 0; 
+}
+
+/* 1. CABEÇALHO DA JANELA */
+.chat-header {
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--chat-bg-card);
+    border-bottom: 1px solid var(--chat-border);
+    z-index: 100;
+    min-height: 62px;
+    flex-shrink: 0;
+}
+
+.chat-header-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-back-btn {
+    display: none;
+    background: rgba(12, 45, 84, 0.05);
+    border: none;
+    color: var(--chat-primary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: background 0.2s;
+}
+
+.chat-header-avatar { position: relative; }
+.chat-header-avatar img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--chat-border);
+}
+
+.online-indicator-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 11px;
+    height: 11px;
+    background: #10b981;
+    border: 2px solid var(--chat-bg-card);
+    border-radius: 50%;
+}
+
+.chat-header-info h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--chat-text);
+}
+
+.chat-status {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #10b981;
+    background: none !important;
+    padding: 0 !important;
+}
+
+.chat-status.status-offline {
+    color: var(--chat-text-sub);
+}
+
+/* 2. AÇÕES E MENU DROPDOWN */
+.icon-btn {
+    background: rgba(12, 45, 84, 0.05);
+    border: none;
+    color: var(--chat-text-sub);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.icon-btn:hover, .icon-btn.active { 
+    background: var(--chat-primary); 
+    color: #ffffff; 
+}
+
+.chat-dropdown-menu {
+    position: absolute;
+    top: 62px;
+    right: 18px;
+    background: var(--chat-bg-card);
+    border: 1px solid var(--chat-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 230px;
+    z-index: 1000;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease;
+}
+
+.chat-dropdown-menu button, .chat-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 18px;
+    border: none;
+    background: none;
+    color: var(--chat-text);
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.chat-dropdown-menu i {
+    color: var(--chat-primary);
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.chat-dropdown-menu button:hover, .chat-dropdown-menu a:hover {
+    background: rgba(12, 45, 84, 0.05);
+    color: var(--chat-primary);
+}
+
+.chat-dropdown-menu hr { border: none; border-top: 1px solid var(--chat-border); margin: 5px 0; }
+
+/* 3. ÁREA DE MENSAGENS */
+.chat-messages-area {
+    flex: 1; 
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f0f2f5;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+body.dark-mode .chat-messages-area {
+    background-color: #0f172a;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+}
+
+/* 4. BALÕES DE MENSAGEM */
+.message-wrapper { 
+    display: flex; 
+    width: 100%; 
+    margin-bottom: 2px; 
+    align-items: flex-end; 
+}
+.msg-them { justify-content: flex-start; }
+.msg-me { justify-content: flex-end; }
+
+.message-bubble {
+    max-width: 75%;
+    padding: 8px 12px 20px 12px !important; 
+    border-radius: 12px;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    min-width: 65px;
+    min-height: auto !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.message-bubble .msg-text, 
+.message-bubble p,
+.message-bubble span:not(.msg-time) {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+}
+
+/* 4.1. TRATAMENTO DE MÍDIAS */
+.msg-media-audio {
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.msg-media-audio audio {
+    height: 32px;
+    max-width: 220px;
+    display: block;
+    margin: 0;
+}
+
+/* FIX V68.7: Ajuste de 60% nas dimensões de Foto e Vídeo */
+.msg-media-photo img, .msg-media-video video {
+    display: block;
+    border-radius: 6px;
+    max-width: 270px; 
+    max-height: 270px; 
+    object-fit: cover;
+    cursor: pointer; /* Feedback de que a imagem é clicável */
+}
+
+/* 4.2. IDENTIDADE EM GRUPOS */
+.is-group-msg.msg-them { gap: 8px; }
+
+.msg-sender-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-bottom: 3px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.msg-sender-name {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--chat-primary);
+    white-space: nowrap;
+}
+
+.msg-them .message-bubble { background: #FFFFFF; color: #1a1a1a; border-bottom-left-radius: 2px; }
+.msg-me .message-bubble { background: var(--chat-primary); color: #ffffff; border-bottom-right-radius: 2px; }
+
+/* Posicionamento do Horário */
+.msg-time {
+    font-size: 0.6rem;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    line-height: 1;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.msg-them .msg-time { color: #8a8d91; }
+.msg-me .msg-time { color: rgba(255, 255, 255, 0.8); }
+
+/* 5. RODAPÉ DE ENVIO (FIX: DESESPREMIDO) */
+.chat-footer {
+    padding: 14px 18px;
+    background: var(--chat-bg-card);
+    border-top: 1px solid var(--chat-border);
+    flex-shrink: 0;
+}
+
+.chat-input-wrapper {
+    display: flex;
+    align-items: flex-end; 
+    gap: 12px; 
+    background: var(--chat-bg-sidebar);
+    padding: 10px 16px; 
+    border-radius: 24px;
+    border: 1px solid var(--chat-border);
+    min-height: 48px;
+}
+
+/* Estilização das Ferramentas de Input */
+.chat-input-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.tool-btn {
+    background: none;
+    border: none;
+    color: var(--chat-text-sub);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.tool-btn:hover { color: var(--chat-primary); transform: scale(1.1); }
+
+.chat-input-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input-field textarea {
+    width: 100%; 
+    background: none; 
+    border: none; 
+    color: var(--chat-text);
+    resize: none; 
+    min-height: 24px; 
+    max-height: 140px; 
+    font-size: 0.95rem; 
+    padding: 6px 0; 
+    outline: none;
+    line-height: 1.4;
+}
+
+/* 6. RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+    .mobile-back-btn { display: flex; }
+    
+    .chat-footer {
+        position: fixed; 
+        bottom: 0; 
+        left: 0; 
+        width: 100%; 
+        padding: 10px 12px calc(12px + env(safe-area-inset-bottom, 5px));
+        background: var(--chat-bg-card);
+        box-shadow: 0 -2px 15px rgba(0,0,0,0.08);
+    }
+
+    .chat-messages-area {
+        padding-bottom: 100px !important; 
+    }
+
+    .msg-media-photo img, .msg-media-video video {
+        max-width: 230px;
+        max-height: 230px;
+    }
+}
+
+/* 7. LIGHTBOX HÍBRIDO - MODO CHAT V2.0 */
+.lightbox-modal.is-chat-mode {
+    max-width: 95vw !important;
+    width: fit-content !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.lightbox-modal.is-chat-mode .lightbox-content {
+    display: block !important;
+    background: transparent !important;
+}
+
+.lightbox-modal.is-chat-mode .lightbox-details-column {
+    display: none !important;
+}
+
+.lightbox-modal.is-chat-mode .lightbox-image-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.lightbox-modal.is-chat-mode .lightbox-image-wrapper img {
+    max-height: 85vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Estilização do Botão de Download */
+.lightbox-download-btn {
+    position: absolute;
+    top: 20px;
+    right: 70px; /* Posicionado ao lado do fechar */
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    z-index: 1100;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.lightbox-download-btn:hover {
+    background: var(--chat-primary);
+    transform: scale(1.1);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Ajuste no botão fechar original quando em modo chat */
+.lightbox-modal.is-chat-mode .lightbox-close-btn {
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .lightbox-download-btn {
+        top: 15px;
+        right: 60px;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .lightbox-modal.is-chat-mode .lightbox-close-btn {
+        top: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+    }
+}

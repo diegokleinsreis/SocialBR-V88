@@ -1,0 +1,102 @@
+/**
+ * assets/css/layout/_layout.css
+ * VERSÃO: V16.0 (Alinhamento Atómico OLED - socialbr.lol)
+ * PAPEL: Organização estrutural do Feed, Sidebar e Footer.
+ * AJUSTE: Sidebar fixa à esquerda e Feed centralizado no espaço restante.
+ */
+
+/* Layout Principal */
+.main-content-area {
+    display: flex;
+    
+    /* --- FIX DE POSICIONAMENTO --- */
+    /* Mantemos flex-start para que a sidebar nunca saia do canto esquerdo 
+       do container principal de 990px. */
+    justify-content: flex-start;
+    
+    gap: 30px;
+    
+    /* Voltamos para largura total para ocupar o grid de 990px corretamente */
+    width: 100%;
+    max-width: 990px; 
+    
+    /* Centraliza o container de 990px no meio do ecrã */
+    margin: 0 auto; 
+    padding: 0 20px; 
+    
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.site-footer {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 0.85em;
+    color: #737373;
+    text-align: center;
+    border-top: 1px solid #dddfe2;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #606770;
+    text-decoration: none;
+    margin: 0;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    color: #8a96a3;
+    font-size: 0.9em;
+    margin-top: 0;
+}
+
+.feed-container,
+.profile-main-content {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.feed-container {
+    /* --- AJUSTE DE LARGURA E CENTRALIZAÇÃO --- */
+    max-width: 612px; 
+    
+    /* IMPORTANTE: margin: 0 auto aqui faz com que o feed procure o centro 
+       do espaço que sobra à direita da sidebar, mantendo o site equilibrado. */
+    margin: 0 auto; 
+}
+
+/* Seção Responsiva */
+@media (max-width: 992px) {
+    .site-sidebar {
+        display: none;
+    }
+    .main-content-area {
+        width: 100%;
+        padding: 0;
+        margin: 20px 0 0 0;
+        display: block;
+    }
+
+    .feed-container,
+    .profile-main-content {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}

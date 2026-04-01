@@ -1,0 +1,334 @@
+/**
+ * assets/css/components/_marketplace_meus_anuncios.css
+ * VERSÃO 1.2: Fix Definitivo de Transbordamento (Mobile & Box-Model)
+ */
+
+/* Garantia de que paddings não aumentem a largura dos elementos */
+.mkt-dashboard-wrapper *, 
+.mkt-dashboard-wrapper *::before, 
+.mkt-dashboard-wrapper *::after {
+    box-sizing: border-box !important;
+}
+
+:root {
+    --mkt-blue: #1877f2;
+    --mkt-blue-hover: #166fe5;
+    --mkt-green: #42b72a;
+    --mkt-red: #e41e3f;
+    --mkt-gray-bg: #f0f2f5;
+    --mkt-white: #ffffff;
+    --mkt-text-main: #050505;
+    --mkt-text-sub: #65676b;
+    --mkt-border: #dddfe2;
+    --mkt-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --mkt-radius: 8px;
+}
+
+/* =========================================
+   1. ESTRUTURA GERAL
+   ========================================= */
+.mkt-dashboard-wrapper {
+    background-color: var(--mkt-gray-bg);
+    min-height: calc(100vh - 70px);
+    padding: 20px 0 40px 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita scroll lateral acidental */
+}
+
+.mkt-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* =========================================
+   2. HEADER DO PAINEL (Resiliente)
+   ========================================= */
+.mkt-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 15px;
+    margin-bottom: 25px;
+    background: var(--mkt-white);
+    padding: 20px;
+    border-radius: var(--mkt-radius);
+    box-shadow: var(--mkt-shadow);
+    width: 100%;
+}
+
+.mkt-dash-header > div:first-child {
+    flex: 1;
+    min-width: 200px; /* Reduzido para não empurrar em telas pequenas */
+}
+
+.dash-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--mkt-text-main);
+    margin: 0 0 4px 0;
+    letter-spacing: -0.5px;
+}
+
+.dash-subtitle {
+    font-size: 0.9rem;
+    color: var(--mkt-text-sub);
+    margin: 0;
+}
+
+/* Botão Anunciar Agora */
+.btn-new-ad {
+    background-color: var(--mkt-blue);
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap; 
+    border: none;
+}
+
+.btn-new-ad:hover {
+    background-color: var(--mkt-blue-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.2);
+}
+
+/* =========================================
+   3. DASHBOARD (Estatísticas)
+   ========================================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--mkt-white);
+    padding: 20px;
+    border-radius: var(--mkt-radius);
+    box-shadow: var(--mkt-shadow);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.icon-blue { background: #e7f3ff; color: #1877f2; }
+.icon-green { background: #ebf5ed; color: #42b72a; }
+.icon-purple { background: #f3e8ff; color: #9333ea; }
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--mkt-text-main);
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--mkt-text-sub);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* =========================================
+   4. LISTAGEM DE GESTÃO
+   ========================================= */
+.section-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--mkt-text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.listings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.listing-item-card {
+    background: var(--mkt-white);
+    border-radius: var(--mkt-radius);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--mkt-shadow);
+}
+
+.listing-thumb {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--mkt-border);
+}
+
+.listing-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    color: #fff;
+    border-radius: 0 0 6px 0;
+}
+
+.status-active { background: var(--mkt-green); }
+.status-sold { background: var(--mkt-text-sub); }
+.status-reserved { background: #9333ea; }
+
+.listing-details {
+    flex: 1;
+}
+
+.listing-title a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--mkt-text-main);
+    text-decoration: none;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.listing-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--mkt-blue);
+    margin-top: 4px;
+}
+
+.listing-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: var(--mkt-text-sub);
+    margin-top: 6px;
+}
+
+.listing-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-action {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+    color: #65676b;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-action:hover { background: #e4e6eb; color: var(--mkt-text-main); }
+.btn-delete:hover { background: #ffe7e7; color: var(--mkt-red); }
+
+.btn-status-toggle {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+}
+
+.btn-mark-sold { background: #f0f2f5; color: #050505; }
+.btn-mark-active { background: var(--mkt-blue); color: #fff; }
+
+/* =========================================
+   5. EMPTY STATE
+   ========================================= */
+.empty-state-panel {
+    background: var(--mkt-white);
+    border-radius: var(--mkt-radius);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: var(--mkt-shadow);
+}
+
+/* =========================================
+   6. RESPONSIVIDADE (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    .mkt-dash-header {
+        flex-direction: column;
+        align-items: stretch; /* Botão ocupa largura total */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .btn-new-ad {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .listing-item-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .listing-thumb {
+        width: 100%;
+        height: 200px;
+    }
+
+    .listing-actions {
+        width: 100%;
+        border-top: 1px solid #f0f2f5;
+        padding-top: 15px;
+        justify-content: space-between;
+    }
+    
+    .btn-status-toggle {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .dash-title { font-size: 1.3rem; }
+    .stat-card { padding: 15px; }
+    .stat-value { font-size: 1.2rem; }
+}

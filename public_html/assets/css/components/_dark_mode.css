@@ -1,0 +1,459 @@
+/* ==========================================================
+    ESTILOS PARA O MODO ESCURO (DARK MODE) - v6.1 (Media Hub Update)
+    ========================================================== */
+
+/* CORREÇÃO: Todas as regras agora são prefixadas com 'html.dark-mode' 
+   para corresponder ao script que aplica a classe na tag <html>.
+*/
+
+html.dark-mode {
+    --cor-fundo-principal: #18191A;
+    --cor-fundo-secundario: #242526;
+    --cor-fundo-hover: #3A3B3C;
+    --cor-borda: #393A3B;
+    --cor-texto-primario: #E4E6EB;
+    --cor-texto-secundario: #B0B3B8;
+    --cor-link-principal: #0c2d54; 
+}
+
+/* --- ESTILOS GERAIS --- */
+html.dark-mode body {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-primario);
+}
+
+/* --- [CORREÇÃO 1: BOTÕES] --- */
+html.dark-mode .primary-btn,
+html.dark-mode .primary-btn-small,
+html.dark-mode .secondary-btn,
+html.dark-mode .secondary-btn-small,
+html.dark-mode .action-btn-add,
+html.dark-mode .action-btn-friends,
+html.dark-mode .action-btn-pending,
+html.dark-mode .action-btn-respond {
+    background-color: #E4E6EB; /* Fundo claro */
+    color: #050505; /* Texto escuro */
+    border: 1px solid var(--cor-borda);
+}
+html.dark-mode .primary-btn:hover,
+html.dark-mode .primary-btn-small:hover,
+html.dark-mode .secondary-btn:hover,
+html.dark-mode .secondary-btn-small:hover,
+html.dark-mode .action-btn-add:hover,
+html.dark-mode .action-btn-friends:hover,
+html.dark-mode .action-btn-pending:hover,
+html.dark-mode .action-btn-respond:hover {
+    background-color: #d8dbdf; /* Hover claro */
+    color: #050505;
+}
+
+
+/* --- LAYOUT --- */
+html.dark-mode .site-header {
+    background-color: var(--cor-fundo-secundario);
+    border-bottom-color: var(--cor-borda);
+}
+
+html.dark-mode .header-title,
+html.dark-mode .logo {
+    color: var(--cor-texto-primario);
+}
+
+html.dark-mode .desktop-nav .logout-btn {
+    background-color: var(--cor-fundo-hover);
+    color: var(--cor-texto-primario);
+}
+
+html.dark-mode .mobile-nav-panel {
+    background-color: var(--cor-fundo-secundario);
+}
+
+html.dark-mode .close-btn {
+    color: var(--cor-texto-secundario);
+}
+
+html.dark-mode .mobile-menu-toggle {
+    color: var(--cor-texto-primario); 
+}
+
+
+/* --- SIDEBAR --- */
+html.dark-mode .sidebar-nav li a {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .sidebar-nav li a:hover {
+    background-color: var(--cor-fundo-hover);
+}
+html.dark-mode .sidebar-nav hr {
+    border-top-color: var(--cor-borda);
+}
+html.dark-mode .sidebar-nav .nav-icon {
+    color: var(--cor-texto-primario); 
+}
+
+/* --- CONTEÚDO (POSTS, CARDS, ETC) --- */
+html.dark-mode .post-card, 
+html.dark-mode .create-post-card,
+html.dark-mode .profile-page-header, 
+html.dark-mode .profile-nav, 
+html.dark-mode .profile-details-card, 
+html.dark-mode .page-section-header,
+html.dark-mode .settings-card,
+html.dark-mode .friend-card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    box-shadow: none; 
+}
+
+html.dark-mode .post-author-name {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .post-timestamp,
+html.dark-mode .post-stats,
+html.dark-mode .action-btn,
+html.dark-mode .comment-count {
+    color: var(--cor-texto-secundario);
+}
+html.dark-mode .post-stats {
+    border-bottom-color: var(--cor-borda);
+}
+
+html.dark-mode .action-btn:hover {
+    background-color: var(--cor-fundo-hover);
+}
+
+html.dark-mode .action-btn.like-btn.active {
+    color: var(--cor-texto-primario); 
+}
+
+html.dark-mode .see-more-link {
+    color: var(--cor-texto-secundario);
+}
+
+
+/* --- PERFIL --- */
+html.dark-mode .profile-header-info h1,
+html.dark-mode .profile-header-info p,
+html.dark-mode .profile-bio {
+    color: var(--cor-texto-primario); 
+}
+
+html.dark-mode .profile-bio a,
+html.dark-mode .profile-nav a {
+    color: var(--cor-texto-secundario); 
+}
+
+html.dark-mode .profile-nav a.active {
+    color: var(--cor-texto-primario); 
+    border-bottom-color: var(--cor-texto-primario); 
+}
+
+html.dark-mode .page-section-header h1,
+html.dark-mode .page-section-header p,
+html.dark-mode .profile-details-card h3,
+html.dark-mode .profile-details-card .info-item span {
+    color: var(--cor-texto-primario); 
+}
+
+html.dark-mode .profile-details-card h3 {
+    border-bottom-color: var(--cor-borda);
+}
+
+html.dark-mode .profile-details-card .info-item label,
+html.dark-mode .profile-details-card .info-item i {
+    color: var(--cor-texto-secundario); 
+}
+
+html.dark-mode .friend-card a {
+    color: var(--cor-texto-primario); 
+}
+html.dark-mode .friend-card .friend-username {
+    color: var(--cor-texto-secundario); 
+}
+
+html.dark-mode .status-online {
+    border: 1px solid var(--cor-fundo-secundario); 
+}
+
+html.dark-mode .post-options-menu,
+html.dark-mode .comment-options-menu {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
+}
+
+html.dark-mode .post-options-menu a,
+html.dark-mode .comment-options-menu a {
+    color: var(--cor-texto-primario); 
+}
+
+html.dark-mode .post-options-menu a:hover,
+html.dark-mode .comment-options-menu a:hover {
+    background-color: var(--cor-fundo-hover); 
+}
+
+/* --- PERFIL PRIVADO --- */
+html.dark-mode .private-profile-card i,
+html.dark-mode .private-profile-card p {
+    color: var(--cor-texto-secundario);
+}
+html.dark-mode .private-profile-card h3 {
+    color: var(--cor-texto-primario);
+}
+
+
+/* --- TEXTAREA E MÍDIA --- */
+html.dark-mode .create-post-card textarea {
+    background-color: var(--cor-fundo-hover);
+    border-color: var(--cor-borda);
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .create-post-card textarea::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+html.dark-mode .post-media-container {
+    background-color: var(--cor-fundo-hover);
+}
+
+
+/* --- COMENTÁRIOS --- */
+html.dark-mode .post-comments-section {
+    border-top-color: var(--cor-borda);
+}
+html.dark-mode .comment-input,
+html.dark-mode .comment-bubble,
+html.dark-mode .comment-like-count {
+    background-color: var(--cor-fundo-hover);
+}
+html.dark-mode .comment-input {
+    border-color: var(--cor-borda);
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .comment-author-name,
+html.dark-mode .comment-text,
+html.dark-mode .comment-submit-btn {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .comment-actions,
+html.dark-mode .comment-actions a,
+html.dark-mode .comment-preview-content .see-more-link,
+html.dark-mode .comment-bubble .see-more-link {
+    color: var(--cor-texto-secundario);
+}
+
+html.dark-mode .comment-like-count {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4); 
+    border: 1px solid var(--cor-borda); 
+    color: var(--cor-texto-primario); 
+}
+
+
+/* --- NOTIFICAÇÕES --- */
+html.dark-mode .notifications-panel {
+    background-color: var(--cor-fundo-secundario); 
+    border-color: var(--cor-borda);
+}
+
+html.dark-mode .notification-item {
+    color: var(--cor-texto-primario); 
+    border-bottom-color: var(--cor-borda);
+}
+
+html.dark-mode .notification-item:hover {
+    background-color: var(--cor-fundo-hover);
+}
+
+html.dark-mode .notification-item.unread {
+    background-color: #303846; 
+}
+
+html.dark-mode .notification-text .user-name,
+html.dark-mode .notification-text p {
+    color: var(--cor-texto-primario); 
+}
+
+html.dark-mode .notifications-footer {
+    border-top-color: var(--cor-borda);
+}
+
+
+/* --- CONFIGURAÇÕES --- */
+html.dark-mode .settings-card h2,
+html.dark-mode .settings-card label,
+html.dark-mode .settings-card .form-section-title {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .settings-card h2 {
+    border-bottom-color: var(--cor-borda);
+}
+html.dark-mode .settings-card input[type="text"],
+html.dark-mode .settings-card input[type="email"],
+html.dark-mode .settings-card input[type="date"],
+html.dark-mode .settings-card input[type="password"],
+html.dark-mode .settings-card select,
+html.dark-mode .settings-card textarea {
+    background-color: var(--cor-fundo-hover);
+    border-color: var(--cor-borda);
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .form-group-description {
+    color: var(--cor-texto-secundario);
+}
+
+html.dark-mode .settings-card .input-file-label {
+    background-color: #e4e6eb; 
+    color: #050505; 
+}
+
+/* Lista de Bloqueados */
+html.dark-mode .blocked-user-item .user-info strong {
+    color: #E4E6EB; 
+}
+html.dark-mode .blocked-user-item .user-info span {
+    color: #B0B3B8; 
+}
+
+html.dark-mode .blocked-user-item .secondary-btn-small {
+     background-color: var(--cor-fundo-hover); 
+     color: var(--cor-texto-primario); 
+     border: 1px solid var(--cor-borda);
+}
+
+
+/* --- MODAL DE DENÚNCIA --- */
+html.dark-mode .report-modal {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+}
+html.dark-mode .report-modal-header,
+html.dark-mode #share-modal .report-modal-footer {
+    border-bottom-color: var(--cor-borda);
+    border-top-color: var(--cor-borda);
+}
+html.dark-mode .report-modal-header h3 {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .report-modal-body,
+html.dark-mode #share-modal,
+html.dark-mode #share-modal .report-modal-body,
+html.dark-mode #share-modal .report-modal-footer {
+    background-color: var(--cor-fundo-secundario);
+}
+html.dark-mode .report-modal-info {
+    color: var(--cor-texto-secundario);
+}
+html.dark-mode .report-options-list .report-option {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .report-options-list .report-option:hover {
+    background-color: var(--cor-fundo-hover);
+}
+
+
+/* --- PÁGINAS PÚBLICAS (LOGIN/CADASTRO) --- */
+html.dark-mode .container {
+    background-color: var(--cor-fundo-secundario);
+    box-shadow: none;
+    border: 1px solid var(--cor-borda);
+}
+
+html.dark-mode .form-header h1,
+html.dark-mode .form-header .icon-anchor {
+    color: var(--cor-texto-primario);
+}
+html.dark-mode .form-header h2,
+html.dark-mode .input-container label {
+    color: var(--cor-texto-secundario);
+}
+
+html.dark-mode input, 
+html.dark-mode select {
+    background-color: var(--cor-fundo-hover);
+    border-color: var(--cor-borda);
+    color: var(--cor-texto-primario);
+}
+
+html.dark-mode .form-actions .link-secondary {
+    color: var(--cor-texto-primario);
+}
+
+html.dark-mode .site-footer {
+    background-color: var(--cor-fundo-secundario);
+    border-top-color: var(--cor-borda);
+}
+
+html.dark-mode .footer-links a,
+html.dark-mode .footer-copyright {
+    color: var(--cor-texto-secundario);
+}
+
+html.dark-mode .back-button {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-primario);
+    border-color: var(--cor-borda);
+}
+
+
+/* --- LIGHTBOX --- */
+html.dark-mode .lightbox-overlay {
+    background-color: rgba(0, 0, 0, 0.85); 
+}
+
+html.dark-mode .lightbox-modal {
+    background-color: var(--cor-fundo-secundario); 
+}
+
+html.dark-mode .lightbox-details-header,
+html.dark-mode .lightbox-details-footer {
+    border-color: var(--cor-borda); 
+}
+
+html.dark-mode .lightbox-details-footer .post-stats {
+    border-bottom-color: var(--cor-borda);
+}
+
+html.dark-mode .lightbox-close-btn {
+    color: var(--cor-texto-secundario); 
+}
+
+
+/* --- PREVIEW DE MÍDIA E GRID --- */
+html.dark-mode .media-preview-area {
+    background-color: var(--cor-fundo-hover);
+    border-color: var(--cor-borda);
+}
+
+html.dark-mode .gallery-option-container {
+    border-bottom-color: var(--cor-borda);
+}
+
+html.dark-mode .gallery-checkbox-wrapper {
+    color: var(--cor-texto-primario);
+}
+
+html.dark-mode .media-preview-item {
+    background-color: var(--cor-fundo-secundario);
+    border-color: var(--cor-borda);
+}
+
+html.dark-mode .post-media-grid {
+    background-color: var(--cor-fundo-hover);
+}
+
+/* ==========================================================
+   NOVA ATUALIZAÇÃO: SETTINGS MEDIA HUB (MODO ESCURO)
+   Sobrescrevendo as variáveis do componente via cascata.
+   ========================================================== */
+
+html.dark-mode .settings-media-hub {
+    --hub-cover-bg: var(--cor-fundo-secundario);
+    --hub-border: var(--cor-borda);
+    --hub-avatar-border: var(--cor-fundo-secundario);
+    --hub-avatar-bg: var(--cor-fundo-secundario);
+    --hub-icon-bg: var(--cor-fundo-hover);
+    --hub-icon-hover: #4E4F50;
+    --hub-icon-text: var(--cor-texto-primario);
+    --hub-title-color: var(--cor-texto-primario);
+    --hub-desc-color: var(--cor-texto-secundario);
+}
