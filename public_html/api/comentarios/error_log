@@ -1,0 +1,55 @@
+[17-Oct-2025 12:49:12 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:49:13 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:49:13 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:49:14 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:50:08 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:50:10 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:50:10 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[17-Oct-2025 12:50:11 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas_Comentarios`, CONSTRAINT `fk_curtida_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `Comentarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/klscom/public_html/api/comentarios/curtir_comentario.php:38
+Stack trace:
+#0 /home/klscom/public_html/api/comentarios/curtir_comentario.php(38): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/comentarios/curtir_comentario.php on line 38
+[07-Jan-2026 14:24:53 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/comentarios/../../src/ComentariosLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php on line 20
+[07-Jan-2026 14:24:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/comentarios/../../src/ComentariosLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php on line 20
+[07-Jan-2026 14:25:38 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/comentarios/../../src/ComentariosLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php on line 20
+[07-Jan-2026 14:25:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/comentarios/../../src/ComentariosLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php on line 20
+[07-Jan-2026 14:25:44 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/comentarios/../../src/ComentariosLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php on line 20
+[07-Jan-2026 14:25:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/comentarios/../../src/ComentariosLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/comentarios/listar_comentarios_modal.php on line 20

@@ -1,0 +1,8 @@
+
+#0 {main}
+  thrown in /home/klscom/public_html/api/chat/gerenciar_participante.php on line 18
+[01-Apr-2026 12:56:59 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/chat/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/chat/gerenciar_participante.php on line 18
+[01-Apr-2026 12:56:59 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/chat/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/chat/gerenciar_participante.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/chat/gerenciar_participante.php on line 18

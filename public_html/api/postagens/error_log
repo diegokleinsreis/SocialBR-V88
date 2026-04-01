@@ -1,0 +1,455 @@
+[17-Oct-2025 12:49:09 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:49:11 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:49:11 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:50:03 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:50:07 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:50:07 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:50:08 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[17-Oct-2025 12:50:08 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:39
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 39
+[29-Dec-2025 14:40:53 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:54 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:54 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:55 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:55 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:57 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:58 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:58 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:59 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:40:59 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:00 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:00 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:14 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:14 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:15 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:16 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:16 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:16 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:16 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:17 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:49 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:49 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:49 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:41:50 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:49:19 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[29-Dec-2025 14:55:19 America/Sao_Paulo] PHP Warning:  Undefined array key "conteudo_texto" in /home/klscom/public_html/api/postagens/criar_comentario.php on line 27
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(post_poll.php): Failed to open stream: No such file or directory in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(post_poll.php): Failed to open stream: No such file or directory in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(): Failed opening 'post_poll.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(post_poll.php): Failed to open stream: No such file or directory in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(post_poll.php): Failed to open stream: No such file or directory in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(): Failed opening 'post_poll.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(post_poll.php): Failed to open stream: No such file or directory in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(post_poll.php): Failed to open stream: No such file or directory in /home/klscom/templates/post_template.php on line 103
+[06-Jan-2026 14:09:46 America/Sao_Paulo] PHP Warning:  include(): Failed opening 'post_poll.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/templates/post_template.php on line 103
+[13-Jan-2026 17:47:57 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:47:57 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:47:59 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:48:00 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:48:00 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:48:00 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:58:07 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:58:08 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 17:58:08 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[13-Jan-2026 22:29:36 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:04 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:05 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:05 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:06 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:06 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:06 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:07 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:22 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:22 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:23 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:23 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:23 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:24 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:24 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:24 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:25 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:25 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:26 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 14:08:27 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[18-Jan-2026 16:51:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:16 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:16 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:17 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:17 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:17 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:18 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:18 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:19 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:19 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:20 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:20 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:20 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:21 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:21 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:49:26 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:55 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:57 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:59 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:59 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:57:59 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:58:00 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:58:00 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:58:01 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:58:01 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:58:01 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 11:58:02 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:55 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:57 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:57 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:57 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[19-Jan-2026 12:00:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`klscom_social`.`Curtidas`, CONSTRAINT `Curtidas_ibfk_2` FOREIGN KEY (`id_postagem`) REFERENCES `Postagens` (`id`) ON DELETE CASCADE) in /home/klscom/public_html/api/postagens/curtir_post.php:50
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/curtir_post.php(50): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/curtir_post.php on line 50
+[02-Mar-2026 11:25:06 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/postagens/votar_enquete.php:131
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/votar_enquete.php(131): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/votar_enquete.php on line 131
+[02-Mar-2026 11:25:09 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/postagens/votar_enquete.php:131
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/votar_enquete.php(131): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/votar_enquete.php on line 131
+[02-Mar-2026 11:25:23 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/postagens/votar_enquete.php:131
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/votar_enquete.php(131): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/votar_enquete.php on line 131
+[02-Mar-2026 11:25:27 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/postagens/votar_enquete.php:131
+Stack trace:
+#0 /home/klscom/public_html/api/postagens/votar_enquete.php(131): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/postagens/votar_enquete.php on line 131

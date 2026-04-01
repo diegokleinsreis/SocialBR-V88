@@ -1,0 +1,3 @@
+[2025-12-26 15:37:40] ERRO GERAL: Arquivo de configuração do banco não encontrado em: /home/klscom/public_html/api/marketplace/../../config/database.php
+[2025-12-26 15:37:59] ERRO GERAL: Arquivo de configuração do banco não encontrado em: /home/klscom/public_html/api/marketplace/../../config/database.php
+[2025-12-26 15:55:32] ERRO GERAL: Arquivo de configuração do banco não encontrado em: /home/klscom/public_html/api/marketplace/../../config/database.php

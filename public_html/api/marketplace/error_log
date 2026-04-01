@@ -1,0 +1,55 @@
+[27-Dec-2025 14:37:10 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 10
+[27-Dec-2025 14:37:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 10
+[27-Dec-2025 14:37:45 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 10
+[27-Dec-2025 14:37:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 10
+[27-Dec-2025 14:42:47 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 18
+[27-Dec-2025 14:42:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 18
+[27-Dec-2025 23:29:55 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 18
+[27-Dec-2025 23:29:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 18
+[27-Dec-2025 23:34:21 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../src/MarketplaceLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 17
+[27-Dec-2025 23:34:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../src/MarketplaceLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 17
+[27-Dec-2025 23:34:46 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../src/MarketplaceLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 17
+[27-Dec-2025 23:34:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../src/MarketplaceLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 17
+[27-Dec-2025 23:39:03 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/marketplace/../../src/MarketplaceLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 17
+[27-Dec-2025 23:39:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/marketplace/../../src/MarketplaceLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/atualizar_status.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/atualizar_status.php on line 17
+[03-Jan-2026 21:09:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method MarketplaceLogic::alternarLike() in /home/klscom/public_html/api/marketplace/alternar_curtida.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/alternar_curtida.php on line 53
+[03-Jan-2026 21:09:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method MarketplaceLogic::alternarLike() in /home/klscom/public_html/api/marketplace/alternar_curtida.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/alternar_curtida.php on line 53
+[03-Jan-2026 21:10:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method MarketplaceLogic::alternarLike() in /home/klscom/public_html/api/marketplace/alternar_curtida.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/alternar_curtida.php on line 53
+[03-Jan-2026 21:10:50 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method MarketplaceLogic::alternarInteresse() in /home/klscom/public_html/api/marketplace/alternar_interesse.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/alternar_interesse.php on line 55
+[03-Jan-2026 21:57:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method MarketplaceLogic::alternarInteresse() in /home/klscom/public_html/api/marketplace/alternar_interesse.php:55
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/alternar_interesse.php on line 55

@@ -1,0 +1,15 @@
+[25-Feb-2026 14:56:14 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/denuncias/criar_denuncia.php:62
+Stack trace:
+#0 /home/klscom/public_html/api/denuncias/criar_denuncia.php(62): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/denuncias/criar_denuncia.php on line 62
+[25-Feb-2026 14:56:25 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/denuncias/criar_denuncia.php:62
+Stack trace:
+#0 /home/klscom/public_html/api/denuncias/criar_denuncia.php(62): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/denuncias/criar_denuncia.php on line 62
+[25-Feb-2026 14:56:26 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/klscom/public_html/api/denuncias/criar_denuncia.php:62
+Stack trace:
+#0 /home/klscom/public_html/api/denuncias/criar_denuncia.php(62): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/klscom/public_html/api/denuncias/criar_denuncia.php on line 62

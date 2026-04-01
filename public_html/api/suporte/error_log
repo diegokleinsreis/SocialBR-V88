@@ -1,0 +1,5 @@
+[02-Mar-2026 17:45:20 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/suporte/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/suporte/acao_chamado.php on line 21
+[02-Mar-2026 17:45:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/suporte/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/suporte/acao_chamado.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/suporte/acao_chamado.php on line 21

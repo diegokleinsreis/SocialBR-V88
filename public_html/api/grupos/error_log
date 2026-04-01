@@ -1,0 +1,17 @@
+[17-Jan-2026 13:06:44 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/grupos/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/grupos/processar_criacao.php on line 15
+[17-Jan-2026 13:06:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/grupos/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/grupos/processar_criacao.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/grupos/processar_criacao.php on line 15
+[30-Mar-2026 18:07:47 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '8-5' for key 'idx_solicitacao_unica' in /home/klscom/src/GruposLogic.php:346
+Stack trace:
+#0 /home/klscom/src/GruposLogic.php(346): mysqli_stmt->execute()
+#1 /home/klscom/public_html/api/grupos/participar.php(55): GruposLogic::participar()
+#2 {main}
+  thrown in /home/klscom/src/GruposLogic.php on line 346
+[30-Mar-2026 18:07:51 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '8-5' for key 'idx_solicitacao_unica' in /home/klscom/src/GruposLogic.php:346
+Stack trace:
+#0 /home/klscom/src/GruposLogic.php(346): mysqli_stmt->execute()
+#1 /home/klscom/public_html/api/grupos/participar.php(55): GruposLogic::participar()
+#2 {main}
+  thrown in /home/klscom/src/GruposLogic.php on line 346

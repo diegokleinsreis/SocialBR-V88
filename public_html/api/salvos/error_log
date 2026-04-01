@@ -1,0 +1,15 @@
+[27-Feb-2026 18:23:06 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/salvos/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/salvos/colecoes.php on line 12
+[27-Feb-2026 18:23:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/salvos/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/salvos/colecoes.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/salvos/colecoes.php on line 12
+[27-Feb-2026 18:23:22 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/salvos/../../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/salvos/colecoes.php on line 12
+[27-Feb-2026 18:23:22 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/salvos/../../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/salvos/colecoes.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/salvos/colecoes.php on line 12
+[27-Feb-2026 18:31:12 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/api/salvos/../../src/SalvosLogic.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/salvos/colecoes.php on line 33
+[27-Feb-2026 18:31:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/api/salvos/../../src/SalvosLogic.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/salvos/colecoes.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/salvos/colecoes.php on line 33

@@ -1,0 +1,14 @@
+[03-Jan-2026 14:21:20 America/Sao_Paulo] Erro no Marketplace: Nenhuma imagem válida foi salva.
+[03-Jan-2026 14:27:41 America/Sao_Paulo] Erro no Marketplace: Nenhuma imagem foi salva. Motivos:
+Extensão não permitida para '2024-5-31_18-22-40-187.BMP' (bmp).
+[03-Jan-2026 14:33:55 America/Sao_Paulo] Erro no Marketplace: Nenhuma imagem foi salva. Motivos:
+Extensão não permitida para '2024-5-31_18-22-40-187.BMP' (bmp).
+[04-Feb-2026 21:36:44 America/Sao_Paulo] Erro no Marketplace: CPF inválido.
+[26-Feb-2026 11:13:01 America/Sao_Paulo] Erro no Marketplace: CPF inválido.
+[26-Feb-2026 11:13:11 America/Sao_Paulo] Erro no Marketplace: CPF inválido.
+[26-Feb-2026 11:17:59 America/Sao_Paulo] Erro no Marketplace: Nenhum arquivo recebido pelo servidor. Verifique o tamanho do envio.
+[28-Mar-2026 11:36:56 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/api/utils/image_handler.php): Failed to open stream: No such file or directory in /home/klscom/public_html/api/marketplace/criar_anuncio.php on line 66
+[28-Mar-2026 11:36:56 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/api/utils/image_handler.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/api/marketplace/criar_anuncio.php:66
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/api/marketplace/criar_anuncio.php on line 66
