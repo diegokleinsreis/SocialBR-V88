@@ -1,0 +1,18 @@
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Undefined variable $config in /home/klscom/public_html/views/login.php on line 15
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/klscom/public_html/views/login.php on line 15
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  include(../templates/head_common.php): Failed to open stream: No such file or directory in /home/klscom/public_html/views/login.php on line 24
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  include(../templates/head_common.php): Failed to open stream: No such file or directory in /home/klscom/public_html/views/login.php on line 24
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  include(): Failed opening '../templates/head_common.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/views/login.php on line 24
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Undefined variable $config in /home/klscom/public_html/views/login.php on line 33
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/klscom/public_html/views/login.php on line 33
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Undefined variable $config in /home/klscom/public_html/views/login.php on line 75
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/klscom/public_html/views/login.php on line 75
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Undefined variable $config in /home/klscom/public_html/views/login.php on line 15
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/klscom/public_html/views/login.php on line 15
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  include(../templates/head_common.php): Failed to open stream: No such file or directory in /home/klscom/public_html/views/login.php on line 24
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  include(../templates/head_common.php): Failed to open stream: No such file or directory in /home/klscom/public_html/views/login.php on line 24
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  include(): Failed opening '../templates/head_common.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/views/login.php on line 24
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Undefined variable $config in /home/klscom/public_html/views/login.php on line 33
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/klscom/public_html/views/login.php on line 33
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Undefined variable $config in /home/klscom/public_html/views/login.php on line 75
+[06-Nov-2025 12:28:02 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/klscom/public_html/views/login.php on line 75
