@@ -1,0 +1,195 @@
+{
+    "ultima_atualizacao": "2026-03-29 13:08:24",
+    "total_rotas": 27,
+    "rotas": [
+        {
+            "slug": "login",
+            "arquivo_destino": "\/views\/login.php",
+            "permissao": "todos",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "cadastro",
+            "arquivo_destino": "\/views\/cadastro.php",
+            "permissao": "todos",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "manutencao",
+            "arquivo_destino": "\/views\/manutencao.php",
+            "permissao": "todos",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "feed",
+            "arquivo_destino": "\/views\/feed.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "perfil",
+            "arquivo_destino": "\/views\/perfil.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "chat",
+            "arquivo_destino": "\/views\/chat\/home.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "salvos",
+            "arquivo_destino": "\/views\/salvos\/home.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "grupos",
+            "arquivo_destino": "\/views\/grupos\/home.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "marketplace",
+            "arquivo_destino": "\/views\/marketplace\/feed.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "suporte",
+            "arquivo_destino": "\/views\/suporte.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "postagem",
+            "arquivo_destino": "\/views\/postagem.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "pesquisa",
+            "arquivo_destino": "\/views\/busca\/pesquisa.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "historico_notificacoes",
+            "arquivo_destino": "\/views\/notificacoes\/historico_notificacoes.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "marketplace\/vender",
+            "arquivo_destino": "\/views\/marketplace\/criar.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "marketplace\/meus-anuncios",
+            "arquivo_destino": "\/views\/marketplace\/meus_anuncios.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "marketplace\/item",
+            "arquivo_destino": "\/views\/marketplace\/detalhes.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "marketplace\/editar",
+            "arquivo_destino": "\/views\/marketplace\/editar.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "grupos\/criar",
+            "arquivo_destino": "\/views\/grupos\/criar.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "grupos\/ver",
+            "arquivo_destino": "\/views\/grupos\/ver.php",
+            "permissao": "logado",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "grupos\/solicitacoes",
+            "arquivo_destino": "\/views\/grupos\/solicitacoes.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "grupos\/membros",
+            "arquivo_destino": "\/views\/grupos\/membros.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "grupos\/configurar",
+            "arquivo_destino": "\/views\/grupos\/configurar.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "configurar_perfil",
+            "arquivo_destino": "\/views\/configurar_perfil.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "gerenciar_bloqueios",
+            "arquivo_destino": "\/views\/gerenciar_bloqueios.php",
+            "permissao": "logado",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "admin",
+            "arquivo_destino": "\/public_html\/admin\/roteador.php",
+            "permissao": "admin",
+            "permite_parametros": 1,
+            "status": 1
+        },
+        {
+            "slug": "teste",
+            "arquivo_destino": "\/views\/teste_erro.php",
+            "permissao": "todos",
+            "permite_parametros": 0,
+            "status": 1
+        },
+        {
+            "slug": "verificar-email",
+            "arquivo_destino": "\/views\/verificar_email.php",
+            "permissao": "todos",
+            "permite_parametros": 0,
+            "status": 1
+        }
+    ]
+}
