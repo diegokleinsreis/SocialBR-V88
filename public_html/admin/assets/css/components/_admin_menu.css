@@ -1,0 +1,162 @@
+/* * COMPONENTE: _admin_menu.css
+ * PAPEL: Estilização da Sidebar, Links de Navegação e Menu Mobile.
+ * VERSÃO: 1.0 (Modular - socialbr.lol)
+ */
+
+/* Layout da Sidebar (Menu Lateral) */
+.site-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
+    height: calc(100vh - 120px);
+    /* CORREÇÃO DE ENGENHARIA: Permite rolagem se o menu for grande */
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #0c2d54 #f0f2f5; /* Firefox */
+}
+
+/* Estilização da barra de rolagem para navegadores Webkit (Chrome/Edge/Safari) */
+.site-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.site-sidebar::-webkit-scrollbar-track {
+    background: #f0f2f5;
+}
+.site-sidebar::-webkit-scrollbar-thumb {
+    background-color: #0c2d54;
+    border-radius: 10px;
+}
+
+/* Navegação da Sidebar */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 5px;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #e9ecef;
+    text-decoration: none;
+    color: #0c2d54;
+}
+
+/* Estado Ativo do Menu */
+.sidebar-nav li.active a {
+    background-color: #e4e6eb;
+    color: #0c2d54;
+    font-weight: 600;
+}
+
+.sidebar-nav .nav-icon {
+    font-size: 1.2em;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    margin-right: 15px;
+    color: #0c2d54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-nav hr {
+    border: none;
+    border-top: 1px solid #dee2e6;
+    margin: 15px 0;
+}
+
+.sidebar-nav .nav-separator {
+    height: 10px;
+}
+
+.sidebar-nav .text-danger .nav-icon {
+    color: #dc3545;
+}
+
+/* Ajustes Mobile (Overlay e Painel) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2000;
+    padding: 20px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.mobile-nav-panel.is-open {
+    transform: translateX(0);
+}
+
+.mobile-nav-panel .site-sidebar {
+    position: static;
+    height: auto;
+    width: 100%;
+    overflow: visible;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5em;
+    line-height: 1;
+    background: none;
+    border: none;
+    color: #606770;
+    cursor: pointer;
+}
+
+/* Responsividade do Menu */
+@media (max-width: 992px) {
+    .site-sidebar {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+}

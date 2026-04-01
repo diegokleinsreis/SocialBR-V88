@@ -1,0 +1,204 @@
+/* ==========================================================================
+   ESTILOS PARA O MODAL DE DENÚNCIAS (VERSÃO CORRIGIDA E FINAL)
+   ========================================================================== */
+
+.admin-table .action-btn.view-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.admin-table .action-btn.view-btn:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+.admin-table .action-btn.view-btn i {
+    margin-right: 5px;
+}
+
+.admin-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6); 
+    padding-top: 60px;
+}
+
+.admin-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.admin-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+    position: relative;
+    padding-right: 60px; /* Garante espaço para o botão 'X' */
+}
+
+.admin-modal-header h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.2em;
+    color: #0c2d54;
+}
+
+/* Regra geral para TODOS os botões de ação no modal */
+.admin-modal .action-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-modal .action-btn:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+/* --- INÍCIO DA CORREÇÃO --- */
+/* Aplica a cor de fundo específica para o botão do cabeçalho usando o seletor de ID correto e !important */
+#admin-modal-header-actions .view-post-btn {
+    background-color: #007bff !important;
+}
+/* --- FIM DA CORREÇÃO --- */
+
+.admin-modal-body {
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.admin-modal-actions {
+    margin-top: auto; 
+    padding: 20px 25px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.admin-modal-actions .action-btn {
+    flex-basis: 32%; 
+}
+
+.admin-modal-actions .ignore-btn { background-color: #6c757d; }
+.admin-modal-actions .hide-btn { background-color: #dc3545; }
+.admin-modal-actions .approve-btn { background-color: #28a745; }
+
+
+.admin-modal-close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+.admin-modal-close:hover,
+.admin-modal-close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#denunciaConteudo .denuncia-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+#denunciaConteudo .denuncia-item h4 {
+    margin-top: 0;
+    font-size: 1em;
+    color: #555;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+#denunciaConteudo .denuncia-comment h4 {
+    color: #c25400;
+}
+
+#denunciaConteudo .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#denunciaConteudo .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+#denunciaConteudo p {
+    white-space: normal;
+    word-break: break-word;
+}
+
+#denunciaConteudo .post-media-container {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f2f5;
+}
+
+#denunciaConteudo .post-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#denunciaConteudo .post-image-container img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+#denunciaConteudo .post-video-container {
+    width: 100%;
+}
+
+#denunciaConteudo .post-video-container video {
+    width: 100%;
+    max-height: 450px;
+    display: block;
+}

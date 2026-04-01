@@ -1,0 +1,229 @@
+/**
+ * _admin_busca.css - Identidade Visual do Módulo de Inteligência
+ * VERSÃO: 1.4 - Blindagem Crítica contra Transbordo Horizontal
+ * PAPEL: Garantir que o conteúdo se ajuste 100% ao viewport mobile.
+ */
+
+/* 1. CONTENÇÃO ESTRUTURAL (Garante o encaixe no main-layout) */
+.main-content {
+    min-width: 0; /* Impede que filhos flexíveis estiquem o pai além da tela */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.admin-content {
+    width: 100%;
+    max-width: 100vw; /* Limita estritamente à largura da janela do navegador */
+    box-sizing: border-box;
+    padding: 15px;
+    overflow-x: hidden;
+}
+
+/* 2. CABEÇALHO DA PÁGINA */
+.admin-header-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dddfe2;
+    padding-bottom: 15px;
+    flex-wrap: wrap; 
+    gap: 15px;
+}
+
+.admin-header-page h1 {
+    font-size: 1.6rem;
+    color: #0C2D54;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* 3. GRID DE CARDS DE ESTATÍSTICAS (KPIs) */
+.busca-stats-grid {
+    display: grid;
+    /* Usa auto-fit em desktops e força contenção */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.busca-stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #eee;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.icon-blue { background: #e7f3ff; color: #1877f2; }
+.icon-green { background: #e7f7ed; color: #28a745; }
+.icon-purple { background: #f3e8ff; color: #8a3ab9; }
+.icon-orange { background: #fff4e5; color: #ff8800; }
+
+.stat-details .stat-value {
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: block;
+}
+
+.stat-details .stat-label {
+    font-size: 0.8rem;
+    color: #65676b;
+}
+
+/* 4. LAYOUT DE LINHAS DUPLAS (Gráficos e Listas) */
+.busca-row-dupla {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.busca-card-container {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #dddfe2;
+    min-width: 0; /* Impede que o gráfico empurre as bordas do grid */
+    height: fit-content;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #0C2D54;
+}
+
+.card-body {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 5. TABELAS E RESPONSIVIDADE INTERNA */
+.admin-table-responsive {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+}
+
+/* 6. CORREÇÃO AGRESSIVA PARA MOBILE (Kill Transbordo) */
+@media (max-width: 768px) {
+    /* Força colunas únicas e remove espaços laterais excessivos */
+    .busca-stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .busca-row-dupla {
+        grid-template-columns: 1fr !important;
+    }
+
+    .admin-header-page {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .btn-premium {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    canvas#chartVolumeBusca {
+        max-width: 100% !important;
+        height: 200px !important; /* Limita a altura para não deformar a tela */
+    }
+}
+
+/* RANKING DE TERMOS */
+.lista-termos-rank {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-termos-rank li {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.rank-pos {
+    background: #f0f2f5;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.rank-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0 12px;
+    color: #1c1e21;
+}
+
+.rank-count {
+    font-size: 0.8rem;
+    color: #65676b;
+}
+
+/* BOTÕES E LINKS */
+.btn-premium {
+    background-color: #0C2D54;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-premium:hover {
+    background-color: #081d36;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: #1877f2;
+    font-weight: 600;
+    text-decoration: none;
+}

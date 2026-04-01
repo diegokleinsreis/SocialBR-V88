@@ -1,0 +1,257 @@
+[02-Oct-2025 11:24:00 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:24:14 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:24:43 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:24:58 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:26:06 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:26:46 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:27:08 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[02-Oct-2025 11:27:31 America/Sao_Paulo] PHP Warning:  Undefined array key "user_role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[09-Oct-2025 16:00:03 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'status' in WHERE is ambiguous in /home/klscom/public_html/admin/admin_editar_usuario.php:36
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_editar_usuario.php(36): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_editar_usuario.php on line 36
+[10-Oct-2025 01:00:15 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/admin/../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/admin/teste_denuncia.php on line 9
+[10-Oct-2025 01:00:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/admin/../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/admin/teste_denuncia.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/admin/teste_denuncia.php on line 9
+[12-Oct-2025 22:51:32 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[12-Oct-2025 22:51:35 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[12-Oct-2025 22:52:09 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[12-Oct-2025 22:52:10 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[13-Oct-2025 09:30:52 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[13-Oct-2025 09:31:17 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[13-Oct-2025 09:32:48 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_editar_usuario.php:35
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_editar_usuario.php(35): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_editar_usuario.php on line 35
+[13-Oct-2025 09:32:55 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_editar_usuario.php:35
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_editar_usuario.php(35): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_editar_usuario.php on line 35
+[13-Oct-2025 09:40:59 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[13-Oct-2025 10:39:26 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[13-Oct-2025 10:39:28 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[13-Oct-2025 10:39:30 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 11:06:10 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 15:30:18 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 16:31:06 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 17:38:32 America/Sao_Paulo] PHP Warning:  Undefined array key "role" in /home/klscom/public_html/admin/admin_auth.php on line 8
+[14-Oct-2025 17:52:01 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 17:53:48 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 17:56:55 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 18:00:50 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 18:00:56 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 18:11:18 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:11
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 11
+[14-Oct-2025 18:16:36 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:12
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(12): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 12
+[14-Oct-2025 18:16:53 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:13
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 13
+[14-Oct-2025 18:17:19 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:7
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(7): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 7
+[14-Oct-2025 18:17:20 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:7
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(7): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 7
+[14-Oct-2025 18:17:30 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:12
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(12): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 12
+[14-Oct-2025 18:17:37 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:12
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(12): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 12
+[14-Oct-2025 18:18:49 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias.php:29
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias.php(29): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias.php on line 29
+[14-Oct-2025 18:21:16 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias_usuarios.php:23
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias_usuarios.php(23): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias_usuarios.php on line 23
+[14-Oct-2025 18:21:34 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias_usuarios.php:23
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias_usuarios.php(23): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias_usuarios.php on line 23
+[14-Oct-2025 18:21:38 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias.php:29
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias.php(29): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias.php on line 29
+[14-Oct-2025 18:22:29 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias.php:29
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias.php(29): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias.php on line 29
+[14-Oct-2025 18:23:29 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias.php:29
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias.php(29): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias.php on line 29
+[14-Oct-2025 18:23:32 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias_usuarios.php:23
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias_usuarios.php(23): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias_usuarios.php on line 23
+[14-Oct-2025 18:28:04 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/index.php:9
+Stack trace:
+#0 /home/klscom/public_html/admin/index.php(9): mysqli->query()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/index.php on line 9
+[14-Oct-2025 18:33:06 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias.php:29
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias.php(29): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias.php on line 29
+[14-Oct-2025 18:33:22 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Denuncias' doesn't exist in /home/klscom/public_html/admin/admin_denuncias_usuarios.php:23
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_denuncias_usuarios.php(23): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_denuncias_usuarios.php on line 23
+[11-Nov-2025 20:39:58 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:57
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(57): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 57
+[12-Nov-2025 09:31:19 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:57
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(57): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 57
+[12-Nov-2025 10:07:44 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:57
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(57): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 57
+[12-Nov-2025 10:13:15 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:58
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(58): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 58
+[12-Nov-2025 10:13:18 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:58
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(58): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 58
+[12-Nov-2025 10:27:34 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:62
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(62): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 62
+[12-Nov-2025 10:27:36 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:62
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(62): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 62
+[12-Nov-2025 10:29:00 America/Sao_Paulo] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'klscom_social.Logs_Visualizacoes_Posts' doesn't exist in /home/klscom/public_html/admin/admin_postagens.php:58
+Stack trace:
+#0 /home/klscom/public_html/admin/admin_postagens.php(58): mysqli->prepare()
+#1 {main}
+  thrown in /home/klscom/public_html/admin/admin_postagens.php on line 58
+[12-Nov-2025 10:46:51 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected identifier "DA", expecting "]" in /home/klscom/public_html/admin/admin_postagens.php on line 30
+[05-Jan-2026 13:01:43 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/admin/../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/admin/admin_marketplace.php on line 9
+[05-Jan-2026 13:01:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/admin/../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/admin/admin_marketplace.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/admin/admin_marketplace.php on line 9
+[05-Jan-2026 13:03:21 America/Sao_Paulo] PHP Warning:  require_once(/home/klscom/public_html/admin/../config/database.php): Failed to open stream: No such file or directory in /home/klscom/public_html/admin/admin_marketplace.php on line 9
+[05-Jan-2026 13:03:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/klscom/public_html/admin/../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/klscom/public_html/admin/admin_marketplace.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/klscom/public_html/admin/admin_marketplace.php on line 9
+[05-Jan-2026 14:06:16 America/Sao_Paulo] PHP Fatal error:  Cannot redeclare get_csrf_token() (previously declared in /home/klscom/config/database.php:90) in /home/klscom/config/database.php on line 90
+[05-Jan-2026 14:06:18 America/Sao_Paulo] PHP Fatal error:  Cannot redeclare get_csrf_token() (previously declared in /home/klscom/config/database.php:90) in /home/klscom/config/database.php on line 90
