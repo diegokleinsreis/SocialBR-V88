@@ -2,8 +2,8 @@
 /**
  * templates/post/campo_comentario.php
  * Componente: Campo de Input para Comentário Rápido.
- * VERSÃO: V6.1 (Sincronização com Motor AJAX V8.5 - socialbr.lol)
- * Responsabilidade: Permitir a inserção imediata de comentários via AJAX e abertura de modal.
+ * VERSÃO: V6.2 (Cor Oficial & Sincronia Modal V9.1 - socialbr.lol)
+ * Responsabilidade: Permitir a inserção imediata de comentários via AJAX e disparar abertura do modal.
  */
 
 // Recupera o token CSRF definido no header.php para validar a requisição
@@ -37,13 +37,13 @@ $csrf_token_atual = $_SESSION['csrf_token'] ?? '';
     }
 
     .comment-input-field:focus {
-        border-color: #1877f2;
+        border-color: #0C2D54; /* Cor Oficial SocialBR */
     }
 
     .comment-submit-btn {
         background: none;
         border: none;
-        color: #1877f2;
+        color: #0C2D54; /* Cor Oficial SocialBR */
         cursor: pointer;
         font-size: 1.2rem;
         display: flex;
@@ -55,7 +55,7 @@ $csrf_token_atual = $_SESSION['csrf_token'] ?? '';
 
     .comment-submit-btn:hover {
         transform: scale(1.1);
-        color: #166fe5;
+        color: #08203c; /* Tom mais profundo para hover */
     }
 
     .comment-submit-btn:disabled {
