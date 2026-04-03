@@ -100,9 +100,8 @@ if ($stmt->execute()) {
     }
     $stmt_p->close();
 
-    // Retorna sucesso e a URL para o JavaScript
-    $redirect_url = $config['base_path'] . "postagem/" . $id_postagem . "#post-" . $id_postagem;
-    responder_json(true, "Comentário enviado!", '', ['redirect' => $redirect_url]);
+    // Retorna sucesso (sem redirecionamento forçado para permitir AJAX atualizar o modal)
+    responder_json(true, "Comentário enviado!");
 
 } else {
     responder_json(false, "Erro técnico ao salvar o comentário.");

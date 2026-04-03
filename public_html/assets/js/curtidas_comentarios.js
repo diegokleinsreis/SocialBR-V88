@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adiciona um "ouvinte" de cliques ao corpo do documento
     document.body.addEventListener('click', function(event) {
         
-        // Verifica se o elemento clicado é um botão de curtir comentário
+        // Verifica se o elemento clicado é um botão de curtir comentário (ou ícone dentro dele)
         const likeButton = event.target.closest('.comment-like-btn');
 
         // Se não for o botão certo, não faz nada

@@ -164,9 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (inputField) inputField.value = '';
                 cancelarResposta();
                 
-                // Se estiver no modal, recarrega a lista. Se estiver no feed, redireciona ou atualiza.
-                if (formElement.id === 'modal-comment-form') {
-                    abrirModalComentarios(modalPostIdInput.value);
+                // Se estiver no modal OU se o formulário for do feed, recarrega o modal para exibir o novo comentário.
+                // Se o modal estiver aberto, recarrega. Se for o feed, abre o modal do post.
+                const postId = modalPostIdInput ? modalPostIdInput.value : formElement.dataset.postId;
+                if (postId) {
+                    abrirModalComentarios(postId);
                 } else if (data.redirect) {
                     window.location.href = data.redirect;
                 }
@@ -241,10 +243,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Trigger de Resposta
-        if (target.classList.contains('modal-reply-trigger')) {
+        // Trigger de Resposta (Melhorado para capturar cliques em ícones dentro do botão)
+        const replyBtn = target.closest('.modal-reply-trigger');
+        if (replyBtn) {
             e.preventDefault();
-            ativarResposta(target.dataset.commentId, target.dataset.author);
+            ativarResposta(replyBtn.dataset.commentId, replyBtn.dataset.author);
             return;
         }
 

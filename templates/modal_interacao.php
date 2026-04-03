@@ -122,7 +122,7 @@ if (isset($_SESSION['user_id'])) {
                     <div class="modal-input-wrapper">
                         <div id="replying-to-info" class="reply-badge is-hidden">
                             A responder a <strong id="replying-to-name"></strong> 
-                            <button type="button" id="cancel-reply-btn"><i class="fas fa-times"></i></button>
+                            <button type="button" id="cancel-reply-btn" onclick="cancelarResposta()"><i class="fas fa-times"></i></button>
                         </div>
                         
                         <div class="input-actions-flex">
