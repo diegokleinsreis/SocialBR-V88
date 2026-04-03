@@ -1,105 +1,95 @@
 <?php
+/**
+ * api/comentarios/curtir_comentario.php
+ * VERSÃO V9.2: PDO Migration & CSRF Shield Fixed
+ * PAPEL: Processar curtidas em comentários com motor PDO.
+ */
+
 session_start();
 
-// Verifica se o usuário está logado
+// 1. Verificação de Identidade
 if (!isset($_SESSION['user_id'])) {
-    // Envia uma resposta de erro em formato JSON
     header('Content-Type: application/json');
     echo json_encode(['success' => false, 'error' => 'Acesso negado.']);
     exit();
 }
 
-// --- IMPORTAÇÕES NECESSÁRIAS ---
+// 2. Importações de Infraestrutura (Caminhos Robustos)
 require_once __DIR__ . '/../../../config/database.php';
-// Importa o dicionário de tipos para padronizar as notificações
+require_once __DIR__ . '/../../../config/sentinela.php'; // Essencial para verify_csrf_token
 require_once __DIR__ . '/../../../config/tipos_notificacoes.php'; 
 
-// --- NOVO BLOCO DE SEGURANÇA: VERIFICAÇÃO CSRF ---
-// Verifica se é um POST, se o token existe e se é válido.
-if ($_SERVER["REQUEST_METHOD"] !== "POST" || !isset($_POST['csrf_token']) || !verify_csrf_token($_POST['csrf_token'])) {
+// 3. Validação de Segurança CSRF
+// Nota: O seu JS envia o token via FormData
+$csrf_token = $_POST['csrf_token'] ?? '';
+if ($_SERVER["REQUEST_METHOD"] !== "POST" || !verify_csrf_token($csrf_token)) {
     header('Content-Type: application/json');
-    http_response_code(403); // Código 403: Acesso Proibido/Token Inválido
-    echo json_encode(['success' => false, 'error' => 'Token de segurança inválido. Tente recarregar a página.']);
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Segurança: Token inválido ou expirado.']);
     exit();
 }
-// --- FIM DO NOVO BLOCO ---
 
-// Pega o ID do comentário enviado pelo JavaScript
-$comment_id = $_POST['comment_id'] ?? 0;
-$user_id = $_SESSION['user_id'];
+// 4. Captura e Sanitização
+$comment_id = (int)($_POST['comment_id'] ?? 0);
+$user_id = (int)$_SESSION['user_id'];
 
-if ($comment_id > 0) {
-    // 1. Verifica se o usuário já curtiu este comentário
-    $sql_check = "SELECT id FROM Curtidas_Comentarios WHERE id_usuario = ? AND id_comentario = ?";
-    $stmt_check = $conn->prepare($sql_check);
-    $stmt_check->bind_param("ii", $user_id, $comment_id);
-    $stmt_check->execute();
-    $result_check = $stmt_check->get_result();
+if ($comment_id <= 0) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'error' => 'ID do comentário inválido.']);
+    exit();
+}
 
-    if ($result_check->num_rows > 0) {
-        // JÁ CURTIU -> DESCURTIR (remover a curtida)
-        $sql_unlike = "DELETE FROM Curtidas_Comentarios WHERE id_usuario = ? AND id_comentario = ?";
-        $stmt_unlike = $conn->prepare($sql_unlike);
-        $stmt_unlike->bind_param("ii", $user_id, $comment_id);
-        $stmt_unlike->execute();
+try {
+    // 5. Lógica de "Toggle" (Alternar Curtida) usando PDO
+    $sql_check = "SELECT id FROM Curtidas_Comentarios WHERE id_usuario = :uid AND id_comentario = :cid";
+    $stmt_check = $pdo->prepare($sql_check);
+    $stmt_check->execute(['uid' => $user_id, 'cid' => $comment_id]);
+    $existente = $stmt_check->fetch();
+
+    if ($existente) {
+        // DESCURTIR
+        $sql_unlike = "DELETE FROM Curtidas_Comentarios WHERE id_usuario = :uid AND id_comentario = :cid";
+        $pdo->prepare($sql_unlike)->execute(['uid' => $user_id, 'cid' => $comment_id]);
         $curtido = false;
     } else {
-        // AINDA NÃO CURTIU -> CURTIR (adicionar a curtida)
-        $sql_like = "INSERT INTO Curtidas_Comentarios (id_usuario, id_comentario) VALUES (?, ?)";
-        $stmt_like = $conn->prepare($sql_like);
-        $stmt_like->bind_param("ii", $user_id, $comment_id);
-        $stmt_like->execute();
+        // CURTIR
+        $sql_like = "INSERT INTO Curtidas_Comentarios (id_usuario, id_comentario) VALUES (:uid, :cid)";
+        $pdo->prepare($sql_like)->execute(['uid' => $user_id, 'cid' => $comment_id]);
         $curtido = true;
 
-        // --- LÓGICA PADRONIZADA PARA CRIAR A NOTIFICAÇÃO DE CURTIDA NO COMENTÁRIO ---
+        // --- LÓGICA DE NOTIFICAÇÃO ---
+        $sql_details = "SELECT id_usuario, id_postagem FROM Comentarios WHERE id = :cid";
+        $stmt_details = $pdo->prepare($sql_details);
+        $stmt_details->execute(['cid' => $comment_id]);
+        $comment_data = $stmt_details->fetch();
 
-        // Primeiro, pegamos o ID do autor do comentário e o ID do post original
-        $sql_comment_details = "SELECT id_usuario, id_postagem FROM Comentarios WHERE id = ?";
-        $stmt_comment_details = $conn->prepare($sql_comment_details);
-        $stmt_comment_details->bind_param("i", $comment_id);
-        $stmt_comment_details->execute();
-        $result_comment_details = $stmt_comment_details->get_result();
-        
-        if ($row = $result_comment_details->fetch_assoc()) {
-            $comment_autor_id = $row['id_usuario'];
-            $post_id_referencia = $row['id_postagem']; // ID do post para o link da notificação
-
-            // Apenas cria a notificação se o usuário não estiver curtindo o próprio comentário
-            if ($comment_autor_id != $user_id) {
-                // USANDO A CONSTANTE PADRONIZADA
-                $tipo_notificacao = NOTIF_CURTIDA_COMENTARIO; 
-                
-                $sql_notificacao = "INSERT INTO notificacoes (usuario_id, remetente_id, tipo, id_referencia) VALUES (?, ?, ?, ?)";
-                $stmt_notificacao = $conn->prepare($sql_notificacao);
-                // Parâmetros: [quem recebe], [quem envia], [tipo], [ID do post original]
-                $stmt_notificacao->bind_param("iisi", $comment_autor_id, $user_id, $tipo_notificacao, $post_id_referencia);
-                $stmt_notificacao->execute();
-                $stmt_notificacao->close();
-            }
+        if ($comment_data && (int)$comment_data['id_usuario'] !== $user_id) {
+            $sql_notif = "INSERT INTO notificacoes (usuario_id, remetente_id, tipo, id_referencia) 
+                          VALUES (:target, :sender, :type, :ref)";
+            $pdo->prepare($sql_notif)->execute([
+                'target' => $comment_data['id_usuario'],
+                'sender' => $user_id,
+                'type'   => NOTIF_CURTIDA_COMENTARIO,
+                'ref'    => $comment_data['id_postagem']
+            ]);
         }
-        $stmt_comment_details->close();
-        // --- FIM DA LÓGICA DE NOTIFICAÇÃO ---
     }
 
-    // 2. Conta o novo número total de curtidas para este comentário
-    $sql_count = "SELECT COUNT(*) AS total_curtidas FROM Curtidas_Comentarios WHERE id_comentario = ?";
-    $stmt_count = $conn->prepare($sql_count);
-    $stmt_count->bind_param("i", $comment_id);
-    $stmt_count->execute();
-    $result_count = $stmt_count->get_result()->fetch_assoc();
-    $total_curtidas = $result_count['total_curtidas'];
+    // 6. Contagem Final Sincronizada
+    $sql_count = "SELECT COUNT(*) as total FROM Curtidas_Comentarios WHERE id_comentario = :cid";
+    $stmt_count = $pdo->prepare($sql_count);
+    $stmt_count->execute(['cid' => $comment_id]);
+    $total_curtidas = $stmt_count->fetch()['total'];
 
-    // 3. Envia uma resposta de sucesso em formato JSON para o JavaScript
+    // 7. Resposta JSON de Sucesso
     header('Content-Type: application/json');
     echo json_encode([
         'success' => true,
         'curtido' => $curtido,
-        'total_curtidas' => $total_curtidas
+        'total_curtidas' => (int)$total_curtidas
     ]);
 
-} else {
-    // Envia uma resposta de erro se o comment_id for inválido
+} catch (PDOException $e) {
     header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'error' => 'ID do comentário inválido.']);
+    echo json_encode(['success' => false, 'error' => 'Erro de banco de dados: ' . $e->getMessage()]);
 }
-?>
