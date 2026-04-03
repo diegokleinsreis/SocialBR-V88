@@ -3,13 +3,12 @@
  * Funções globais (apiFetch, showToast) e inicialização
  * dos menus, dropdowns e heartbeat.
  *
- * VERSÃO: V65.1 (Mobile Logic Shield & Scroll Lock - socialbr.lol)
+ * VERSÃO: V65.2 (Rigor Arquitetônico - socialbr.lol)
+ * PAPEL: Orquestrador de Infraestrutura Global.
  */
 
 // ==========================================================
-// FUNÇÕES GLOBAIS (V54)
-// Definidas fora do DOMContentLoaded para serem acessíveis
-// por outros scripts (curtidas.js, compartilhar.js, etc.)
+// FUNÇÕES GLOBAIS
 // ==========================================================
 
 /**
@@ -102,24 +101,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function openMenu() {
         if (mobileNav) mobileNav.classList.add('is-open');
         if (overlay) overlay.classList.add('is-visible');
-        document.body.style.overflow = 'hidden'; // Trava o scroll do site ao abrir
+        document.body.style.overflow = 'hidden'; 
     }
 
     function closeMenu() {
         if (mobileNav) mobileNav.classList.remove('is-open');
         if (overlay) overlay.classList.remove('is-visible');
-        document.body.style.overflow = ''; // Libera o scroll
+        document.body.style.overflow = ''; 
     }
 
     if (menuToggle) {
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation(); // Essencial: impede que o clique feche o menu na mesma hora
+            e.stopPropagation(); 
             openMenu();
         });
     }
 
-    // Fechar pelo botão X
     if (closeBtn) {
         closeBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -127,14 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fechar ao clicar fora (Overlay) - Suporte Touch
     if (overlay) {
         overlay.addEventListener('click', closeMenu);
         overlay.addEventListener('touchstart', closeMenu, {passive: true});
     }
 
 
-    // --- LÓGICA ATUALIZADA PARA O DROPDOWN DE CONFIGURAÇÕES ---
+    // --- LÓGICA PARA O DROPDOWN DE CONFIGURAÇÕES ---
     const configToggles = document.querySelectorAll('.config-dropdown-toggle');
 
     configToggles.forEach(toggleBtn => {
@@ -150,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // --- OUVINTE DE CLIQUES ÚNICO E CENTRALIZADO PARA TODA A PÁGINA ---
+    // --- OUVINTE DE CLIQUES ÚNICO E CENTRALIZADO ---
     document.body.addEventListener('click', function(event) {
         const clickedMenuBtn = event.target.closest('.post-options-btn, .comment-options-btn, .friend-dropdown-toggle');
         let activeMenu = null;
@@ -163,12 +160,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        // Fecha outros menus abertos
         document.querySelectorAll('.post-options-menu, .comment-options-menu, .dropdown-content').forEach(menu => {
             if (menu !== activeMenu) {
                 menu.classList.add('is-hidden');
             }
         });
 
+        // Denúncias
         const reportBtn = event.target.closest('.post-report-btn');
         if (reportBtn) {
             event.preventDefault();
@@ -177,11 +176,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        const commentBtn = event.target.closest('#focus-comment-btn, .btn-comentar-trigger');
-        if(commentBtn) {
+        // CORREÇÃO: Removido .btn-comentar-trigger desta lógica de 'focus'.
+        // Agora o clicar em 'Comentar' abrirá o modal via comentarios.js
+        const focusBtn = event.target.closest('#focus-comment-btn');
+        if(focusBtn) {
             if (window.location && window.location.pathname && !window.location.pathname.includes('/postagem/')) {
                 event.preventDefault();
-                const postCard = commentBtn.closest('.post-card');
+                const postCard = focusBtn.closest('.post-card');
                 if (postCard) {
                     const commentInput = postCard.querySelector('.comment-input-field') || postCard.querySelector('.comment-input');
                     if (commentInput) {
@@ -192,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- OUVINTE ADICIONAL PARA FECHAR MENUS AO CLICAR EM QUALQUER LUGAR ---
+    // Fechar menus ao clicar em qualquer lugar (fora dos botões de menu)
     document.addEventListener('click', function(event) {
         if (!event.target.closest('.post-options-btn, .comment-options-btn, .friend-dropdown-toggle') && !event.target.closest('.post-options-menu, .comment-options-menu, .dropdown-content')) {
             document.querySelectorAll('.post-options-menu, .comment-options-menu, .dropdown-content').forEach(menu => {
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- LÓGICA PARA UPLOAD AUTOMÁTICO DA FOTO DE CAPA (V64) ---
+    // --- UPLOAD AUTOMÁTICO DE CAPA ---
     const coverInput = document.getElementById('cover-input');
     const coverForm = document.getElementById('cover-upload-form');
 
@@ -216,25 +217,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- HEARTBEAT DE STATUS ONLINE ---
     function enviarHeartbeat() {
-        const cacheBuster = new Date().getTime();
         if (typeof BASE_PATH === 'undefined') return; 
-        
+        const cacheBuster = new Date().getTime();
         const fullUrl = BASE_PATH + 'api/usuarios/atualizar_status_online.php?t=' + cacheBuster;
 
         fetch(fullUrl, { 
             method: 'POST', 
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         })
-        .then(response => {
-            if (!response.ok) {
-                console.error('Falha no heartbeat do status online.');
-            }
-        })
-        .catch(error => {
-            console.error('Erro de rede no heartbeat:', error);
-        });
+        .catch(error => console.error('Erro no heartbeat:', error));
     }
 
     enviarHeartbeat(); 
