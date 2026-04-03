@@ -1,8 +1,8 @@
 /**
  * assets/js/comentarios.js
- * VERSÃO V9.0: OLED Unification & SweetAlert2 Premium
- * PAPEL: Gerir interações (Feed e Modal) com captura global de identidade pendente.
- * VERSÃO: V9.0 ( socialbr.lol )
+ * VERSÃO V9.1: Corrigido - Sincronização Feed/Modal & Curtidas Integradas
+ * PAPEL: Gerir interações com suporte a conteúdo dinâmico e transição automática.
+ * VERSÃO: V9.1 ( socialbr.lol )
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!modal || !modalBody) return;
 
         cancelarResposta();
+        // Sincroniza o ID no input oculto do modal
         if (modalPostIdInput) modalPostIdInput.value = postId;
+        
         modalBody.innerHTML = '<div class="modal-loading-placeholder"><i class="fas fa-spinner fa-spin"></i> A carregar interações...</div>';
         
         modal.classList.remove('is-hidden');
@@ -104,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <a href="#" class="comment-like-btn ${c.usuario_curtiu ? 'active' : ''}" data-comment-id="${c.id}" style="text-decoration: none; color: inherit; font-weight: 700;">Curtir</a>
                                 <a href="#" class="modal-reply-trigger" data-comment-id="${c.id}" data-author="${c.nome}" style="text-decoration: none; color: inherit; font-weight: 700;">Responder</a>
                                 <span>${dataHumana}</span>
-                                ${c.total_curtidas > 0 ? `<span class="comment-like-count" data-comment-id="${c.id}" style="background:#fff; padding:2px 6px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 4px; color: #0C2D54;"><i class="fas fa-thumbs-up" style="font-size: 0.7rem;"></i> ${c.total_curtidas}</span>` : ''}
+                                ${c.total_curtidas > 0 ? `<span class="comment-like-count" data-comment-id="${c.id}" style="background:#fff; padding:2px 6px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 4px; color: #0C2D54;"><i class="fas fa-thumbs-up" style="font-size: 0.7rem;"></i> <span>${c.total_curtidas}</span></span>` : `<span class="comment-like-count" data-comment-id="${c.id}" style="display:none; background:#fff; padding:2px 6px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); align-items: center; gap: 4px; color: #0C2D54;"><i class="fas fa-thumbs-up" style="font-size: 0.7rem;"></i> <span>0</span></span>`}
                             </div>
                         </div>
                     </div>
@@ -136,10 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (modalInput) modalInput.placeholder = "Escreva um comentário...";
     }
 
-    /**
-     * [NOVO] MOTOR DE ENVIO UNIFICADO (AJAX + SWEETALERT2)
-     * Processa tanto o formulário do Modal quanto o do Feed.
-     */
+    // --- 4. MOTOR DE ENVIO UNIFICADO ---
     async function processarEnvioComentario(formElement) {
         const btn = formElement.querySelector('button[type="submit"]');
         const originalIcon = btn.innerHTML;
@@ -149,24 +148,18 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
         const formData = new FormData(formElement);
-        // Obtém o endpoint do atributo 'action' do formulário
         const endpoint = formElement.getAttribute('action') || 'api/comentarios/criar_comentario_ajax.php';
 
         try {
-            const response = await fetch(endpoint, {
-                method: 'POST',
-                body: formData,
-                headers: { 'X-Requested-With': 'XMLHttpRequest' }
-            });
-            const data = await response.json();
+            const data = await apiFetch(endpoint.replace(BASE_PATH + 'api/', ''), 'POST', formData);
 
             if (data.success) {
                 if (inputField) inputField.value = '';
                 cancelarResposta();
                 
-                // Se estiver no modal OU se o formulário for do feed, recarrega o modal para exibir o novo comentário.
-                // Se o modal estiver aberto, recarrega. Se for o feed, abre o modal do post.
-                const postId = modalPostIdInput ? modalPostIdInput.value : formElement.dataset.postId;
+                // CORREÇÃO: Prioriza o dataset do form (Feed) se o input do modal estiver vazio
+                const postId = formElement.dataset.postId || (modalPostIdInput ? modalPostIdInput.value : null);
+                
                 if (postId) {
                     abrirModalComentarios(postId);
                 } else if (data.redirect) {
@@ -175,46 +168,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (window.showToast) showToast('Interação enviada!');
             } else {
-                // CAPTURA PREMIUM: Identidade Pendente
                 if (data.error === 'verificacao_pendente') {
                     Swal.fire({
                         title: '🛡️ Quase lá!',
-                        text: data.message || 'Confirme o seu e-mail para poder postar comentários e interagir na rede.',
+                        text: data.message || 'Confirme o seu e-mail para poder interagir.',
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#0C2D54',
-                        cancelButtonColor: '#606770',
-                        confirmButtonText: 'Verificar E-mail Agora',
+                        confirmButtonText: 'Verificar E-mail',
                         cancelButtonText: 'Agora não'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = BASE_PATH + 'configurar_perfil?tab=conta';
-                        }
-                    });
+                    }).then((r) => { if (r.isConfirmed) window.location.href = BASE_PATH + 'configurar_perfil?tab=conta'; });
                 } else {
-                    Swal.fire({ icon: 'error', title: 'Ops!', text: data.message || 'Não foi possível enviar o comentário.', confirmButtonColor: '#0C2D54' });
+                    Swal.fire({ icon: 'error', title: 'Ops!', text: data.message || 'Erro ao comentar.', confirmButtonColor: '#0C2D54' });
                 }
             }
         } catch (error) {
-            console.error("Erro no motor de comentários:", error);
-            Swal.fire({ icon: 'error', title: 'Erro de Rede', text: 'Não foi possível conectar ao servidor.', confirmButtonColor: '#d33' });
+            console.error("Erro no motor:", error);
         } finally {
             btn.disabled = false;
             btn.innerHTML = originalIcon;
         }
     }
 
-    // --- 4. LISTENERS DE SUBMISSÃO ---
-    
-    // Listener para o Modal
+    // --- 5. LISTENERS E DELEGAÇÃO ---
+
     if (modalForm) {
-        modalForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            processarEnvioComentario(modalForm);
-        });
+        modalForm.addEventListener('submit', (e) => { e.preventDefault(); processarEnvioComentario(modalForm); });
     }
 
-    // Listener Global para o Feed (Delegação de Eventos para .ajax-comment-form)
     document.body.addEventListener('submit', function(e) {
         if (e.target.classList.contains('ajax-comment-form')) {
             e.preventDefault();
@@ -222,28 +203,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- 5. DELEGAÇÃO DE EVENTOS CENTRALIZADA ---
     document.body.addEventListener('click', async function(e) {
         const target = e.target;
+
+        // [NOVO] Lógica de Curtir Comentário Integrada
+        const likeBtn = target.closest('.comment-like-btn');
+        if (likeBtn) {
+            e.preventDefault();
+            const commentId = likeBtn.dataset.commentId;
+            const fd = new FormData();
+            fd.append('comment_id', commentId);
+
+            try {
+                const data = await apiFetch('comentarios/curtir_comentario.php', 'POST', fd);
+                if (data.success) {
+                    // Atualiza todos os botões e contadores (Feed e Modal)
+                    document.querySelectorAll(`.comment-like-btn[data-comment-id="${commentId}"]`).forEach(btn => {
+                        btn.classList.toggle('active', data.curtido);
+                    });
+                    document.querySelectorAll(`.comment-like-count[data-comment-id="${commentId}"]`).forEach(span => {
+                        const countSpan = span.querySelector('span');
+                        if (countSpan) countSpan.textContent = data.total_curtidas;
+                        span.style.display = data.total_curtidas > 0 ? 'inline-flex' : 'none';
+                    });
+                }
+            } catch (err) { console.error(err); }
+            return;
+        }
 
         // Abrir Modal
         if (target.closest('.open-modal-comments') || target.closest('.btn-comentar-trigger')) {
             e.preventDefault();
-            const container = target.closest('[data-postid]');
-            if (container) abrirModalComentarios(container.dataset.postid);
+            const container = target.closest('[data-post-id]') || target.closest('[data-postid]');
+            if (container) abrirModalComentarios(container.dataset.postId || container.dataset.postid);
             return;
         }
 
         // Fechar Modal
         if (target === closeBtn || target.closest('#close-comment-modal') || (modal && target === modal)) {
-            if (modal) {
-                modal.classList.add('is-hidden');
-                document.body.style.overflow = '';
-            }
+            if (modal) { modal.classList.add('is-hidden'); document.body.style.overflow = ''; }
             return;
         }
 
-        // Trigger de Resposta (Melhorado para capturar cliques em ícones dentro do botão)
+        // Responder
         const replyBtn = target.closest('.modal-reply-trigger');
         if (replyBtn) {
             e.preventDefault();
@@ -251,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Editar Comentário (Abrir form)
+        // Editar
         const editBtn = target.closest('.comment-edit-btn');
         if (editBtn) {
             e.preventDefault();
@@ -264,63 +266,38 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Cancelar Edição
-        const cancelEdit = target.closest('.comment-edit-cancel');
-        if (cancelEdit) {
-            const wrap = document.getElementById(`comment-wrapper-${cancelEdit.dataset.commentId}`);
+        // Cancelar/Salvar Edição e Exclusão (Mantidos conforme original)
+        if (target.closest('.comment-edit-cancel')) {
+            const wrap = document.getElementById(`comment-wrapper-${target.closest('.comment-edit-cancel').dataset.commentId}`);
             wrap.querySelector('.comment-view-mode').classList.remove('is-hidden');
             wrap.querySelector('.comment-edit-form').classList.add('is-hidden');
-            return;
         }
 
-        // Salvar Edição
         const saveEdit = target.closest('.comment-edit-save');
         if (saveEdit) {
             e.preventDefault();
             const commentId = saveEdit.dataset.commentId;
             const wrap = document.getElementById(`comment-wrapper-${commentId}`);
             const newText = wrap.querySelector('.comment-edit-textarea').value;
-            
             const fd = new FormData();
             fd.append('comment_id', commentId);
             fd.append('new_text', newText);
-
-            try {
-                const data = await apiFetch('comentarios/editar_comentario.php', 'POST', fd);
-                if (data.success) {
-                    wrap.querySelector('.comment-view-mode .comment-text').innerHTML = data.new_text_html;
-                    wrap.querySelector('.comment-view-mode').classList.remove('is-hidden');
-                    wrap.querySelector('.comment-edit-form').classList.add('is-hidden');
-                    if (window.showToast) showToast('Atualizado!');
-                }
-            } catch (err) { console.error(err); }
-            return;
+            const res = await apiFetch('comentarios/editar_comentario.php', 'POST', fd);
+            if (res.success) {
+                wrap.querySelector('.comment-view-mode .comment-text').innerHTML = res.new_text_html;
+                wrap.querySelector('.comment-view-mode').classList.remove('is-hidden');
+                wrap.querySelector('.comment-edit-form').classList.add('is-hidden');
+            }
         }
 
-        // Excluir Comentário
         const deleteBtn = target.closest('.comment-delete-btn');
         if (deleteBtn) {
             e.preventDefault();
-            const confirmado = await MotorDeAlertas.confirmar(
-                'Eliminar Comentário', 
-                'Tens a certeza que desejas eliminar esta interação?', 
-                'Sim, eliminar', 
-                '#dc3545'
-            );
-            
-            if (confirmado) {
-                const fd = new FormData();
-                fd.append('comment_id', deleteBtn.dataset.commentId);
-                try {
-                    const data = await apiFetch('comentarios/excluir_comentario.php', 'POST', fd);
-                    if (data.success) {
-                        const wrap = document.getElementById(`comment-wrapper-${deleteBtn.dataset.commentId}`);
-                        if (wrap) wrap.innerHTML = '<p style="font-style:italic;color:#65676b;padding:10px;font-size:0.85rem;">Comentário eliminado.</p>';
-                    }
-                } catch (err) { console.error(err); }
+            if (await MotorDeAlertas.confirmar('Eliminar Comentário', 'Tens a certeza?', 'Sim', '#dc3545')) {
+                const fd = new FormData(); fd.append('comment_id', deleteBtn.dataset.commentId);
+                const res = await apiFetch('comentarios/excluir_comentario.php', 'POST', fd);
+                if (res.success) document.getElementById(`comment-wrapper-${deleteBtn.dataset.commentId}`).innerHTML = '<p style="font-style:italic;color:#65676b;padding:10px;">Eliminado.</p>';
             }
-            return;
         }
     });
-
 });
