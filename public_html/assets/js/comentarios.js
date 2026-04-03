@@ -1,8 +1,8 @@
 /**
  * assets/js/comentarios.js
- * VERSÃO V9.1: Corrigido - Sincronização Feed/Modal & Curtidas Integradas
- * PAPEL: Gerir interações com suporte a conteúdo dinâmico e transição automática.
- * VERSÃO: V9.1 ( socialbr.lol )
+ * VERSÃO V10.0: Unified Interaction Engine (Feed + Modal)
+ * PAPEL: Orquestrar Curtidas, Respostas e Transições Automáticas Feed -> Modal.
+ * CONSTITUIÇÃO: socialbr.lol
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,14 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 2. FUNÇÕES DE CARREGAMENTO (MODAL) ---
 
     async function abrirModalComentarios(postId) {
-        if (!modal || !modalBody) return;
+        if (!modal || !modalBody) {
+            console.error("Arquitetura: Modal de interações não encontrado no DOM.");
+            return;
+        }
 
         cancelarResposta();
-        // Sincroniza o ID no input oculto do modal
-        if (modalPostIdInput) modalPostIdInput.value = postId;
         
+        // Sincroniza o ID no input oculto e garante o estado inicial
+        if (modalPostIdInput) modalPostIdInput.value = postId;
         modalBody.innerHTML = '<div class="modal-loading-placeholder"><i class="fas fa-spinner fa-spin"></i> A carregar interações...</div>';
         
+        // Exibe o modal IMEDIATAMENTE antes do fetch para melhor UX
         modal.classList.remove('is-hidden');
         document.body.style.overflow = 'hidden'; 
 
@@ -45,13 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.comentarios && data.comentarios.length > 0) {
                     modalBody.innerHTML = renderizarArvoreComentarios(data.comentarios);
                 } else {
-                    modalBody.innerHTML = '<p style="text-align:center; color:#65676b; padding:20px;">Ainda não há comentários. Seja o primeiro!</p>';
+                    modalBody.innerHTML = '<p style="text-align:center; color:#65676b; padding:40px;">Ainda não há interações. Seja o primeiro!</p>';
                 }
             } else {
-                modalBody.innerHTML = `<p style="color:red; text-align:center;">${data.error}</p>`;
+                modalBody.innerHTML = `<p style="color:red; text-align:center; padding:20px;">${data.error}</p>`;
             }
         } catch (error) {
-            modalBody.innerHTML = '<p style="color:red; text-align:center;">Erro ao carregar comentários.</p>';
+            console.error("Erro no carregamento do modal:", error);
+            modalBody.innerHTML = '<p style="color:red; text-align:center; padding:20px;">Falha ao conectar com o servidor.</p>';
         }
     }
 
@@ -80,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                                 ${isLoggedIn ? `
                                 <div class="comment-options-container" style="align-self: center;">
-                                    <button class="comment-options-btn" style="background:none; border:none; color:#65676b; cursor:pointer; padding: 8px; border-radius: 50%; transition: background 0.2s;">
+                                    <button class="comment-options-btn" style="background:none; border:none; color:#65676b; cursor:pointer; padding: 8px; border-radius: 50%;">
                                         <i class="fas fa-ellipsis-h"></i>
                                     </button>
                                     <div class="comment-options-menu is-hidden" style="position: absolute; right: 0; background: #fff; border: 1px solid #dddfe2; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 100; padding: 5px; width: 160px;">
@@ -89,12 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                             <a href="#" class="comment-delete-btn" data-comment-id="${c.id}" style="display:block; padding:8px 12px; color:#dc3545; text-decoration:none; font-size:0.9rem;"><i class="fas fa-trash"></i> Eliminar</a>
                                         ` : `
                                             <a href="#" class="post-report-btn" data-content-type="comentario" data-content-id="${c.id}" style="display:block; padding:8px 12px; color:#e67e22; text-decoration:none; font-size:0.9rem;">
-                                                <i class="fas fa-flag"></i> Denunciar Comentário
+                                                <i class="fas fa-flag"></i> Denunciar
                                             </a>
                                         `}
                                     </div>
                                 </div>` : ''}
                             </div>
+                            
                             <div class="comment-edit-form is-hidden" style="margin: 8px 0; width: 90%;">
                                 <textarea class="comment-edit-textarea" style="width:100%; border-radius:12px; border:1px solid #dddfe2; padding:10px; font-family: inherit; resize: none;">${c.conteudo_texto.replace(/<br\s*\/?>/mg, "\n")}</textarea>
                                 <div style="display:flex; gap:8px; margin-top:5px; justify-content: flex-start;">
@@ -102,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <button class="comment-edit-cancel" data-comment-id="${c.id}" style="font-size:0.8rem; background:#e4e6eb; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-weight: 600;">Cancelar</button>
                                 </div>
                             </div>
+
                             <div class="comment-actions" style="margin-top: 4px; padding-left: 12px; font-size: 0.8rem; display: flex; align-items: center; gap: 12px; color: #65676b;">
                                 <a href="#" class="comment-like-btn ${c.usuario_curtiu ? 'active' : ''}" data-comment-id="${c.id}" style="text-decoration: none; color: inherit; font-weight: 700;">Curtir</a>
                                 <a href="#" class="modal-reply-trigger" data-comment-id="${c.id}" data-author="${c.nome}" style="text-decoration: none; color: inherit; font-weight: 700;">Responder</a>
@@ -135,7 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function cancelarResposta() {
         if (modalParentIdInput) modalParentIdInput.value = '';
         if (replyBadge) replyBadge.classList.add('is-hidden');
-        if (modalInput) modalInput.placeholder = "Escreva um comentário...";
+        if (modalInput) {
+            modalInput.placeholder = "Escreva um comentário...";
+        }
     }
 
     // --- 4. MOTOR DE ENVIO UNIFICADO ---
@@ -148,17 +157,18 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
         const formData = new FormData(formElement);
-        const endpoint = formElement.getAttribute('action') || 'api/comentarios/criar_comentario_ajax.php';
+        // Endpoint robusto: limpa qualquer prefixo para o apiFetch
+        const endpoint = (formElement.getAttribute('action') || 'comentarios/criar_comentario_ajax.php').replace(BASE_PATH + 'api/', '');
 
         try {
-            const data = await apiFetch(endpoint.replace(BASE_PATH + 'api/', ''), 'POST', formData);
+            const data = await apiFetch(endpoint, 'POST', formData);
 
             if (data.success) {
                 if (inputField) inputField.value = '';
                 cancelarResposta();
                 
-                // CORREÇÃO: Prioriza o dataset do form (Feed) se o input do modal estiver vazio
-                const postId = formElement.dataset.postId || (modalPostIdInput ? modalPostIdInput.value : null);
+                // RESILIÊNCIA: Busca o ID da postagem no formulário ou no contexto
+                const postId = formElement.dataset.postId || formElement.querySelector('[name="id_postagem"]')?.value || (modalPostIdInput ? modalPostIdInput.value : null);
                 
                 if (postId) {
                     abrirModalComentarios(postId);
@@ -184,18 +194,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } catch (error) {
             console.error("Erro no motor:", error);
+            Swal.fire({ icon: 'error', title: 'Erro de Conexão', text: 'Não foi possível processar seu comentário.', confirmButtonColor: '#0C2D54' });
         } finally {
             btn.disabled = false;
             btn.innerHTML = originalIcon;
         }
     }
 
-    // --- 5. LISTENERS E DELEGAÇÃO ---
+    // --- 5. LISTENERS E DELEGAÇÃO CENTRALIZADA ---
 
+    // Listener de Submissão para Modal
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => { e.preventDefault(); processarEnvioComentario(modalForm); });
     }
 
+    // Delegação Global de Submissão (Feed)
     document.body.addEventListener('submit', function(e) {
         if (e.target.classList.contains('ajax-comment-form')) {
             e.preventDefault();
@@ -203,10 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Delegação Global de Cliques (Corpo da Página)
     document.body.addEventListener('click', async function(e) {
         const target = e.target;
 
-        // [NOVO] Lógica de Curtir Comentário Integrada
+        // [MÓDULO] Curtir Comentário (Sincronizado)
         const likeBtn = target.closest('.comment-like-btn');
         if (likeBtn) {
             e.preventDefault();
@@ -217,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const data = await apiFetch('comentarios/curtir_comentario.php', 'POST', fd);
                 if (data.success) {
-                    // Atualiza todos os botões e contadores (Feed e Modal)
+                    // Atualiza todos os botões e contadores vinculados a este comentário na página
                     document.querySelectorAll(`.comment-like-btn[data-comment-id="${commentId}"]`).forEach(btn => {
                         btn.classList.toggle('active', data.curtido);
                     });
@@ -227,25 +241,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         span.style.display = data.total_curtidas > 0 ? 'inline-flex' : 'none';
                     });
                 }
-            } catch (err) { console.error(err); }
+            } catch (err) { console.error("Curtida falhou:", err); }
             return;
         }
 
-        // Abrir Modal
+        // [MÓDULO] Abrir Modal de Interações
         if (target.closest('.open-modal-comments') || target.closest('.btn-comentar-trigger')) {
             e.preventDefault();
-            const container = target.closest('[data-post-id]') || target.closest('[data-postid]');
-            if (container) abrirModalComentarios(container.dataset.postId || container.dataset.postid);
+            const container = target.closest('[data-post-id]') || target.closest('[data-postid]') || target.closest('.post-card');
+            const postId = container ? (container.dataset.postId || container.dataset.postid) : null;
+            if (postId) abrirModalComentarios(postId);
             return;
         }
 
-        // Fechar Modal
-        if (target === closeBtn || target.closest('#close-comment-modal') || (modal && target === modal)) {
-            if (modal) { modal.classList.add('is-hidden'); document.body.style.overflow = ''; }
-            return;
-        }
-
-        // Responder
+        // [MÓDULO] Responder Comentário (Dentro do Modal)
         const replyBtn = target.closest('.modal-reply-trigger');
         if (replyBtn) {
             e.preventDefault();
@@ -253,7 +262,17 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Editar
+        // [MÓDULO] Fechar Modal
+        if (target === closeBtn || target.closest('#close-comment-modal') || (modal && target === modal)) {
+            if (modal) { 
+                modal.classList.add('is-hidden'); 
+                document.body.style.overflow = ''; 
+                cancelarResposta();
+            }
+            return;
+        }
+
+        // [MÓDULO] Editar / Eliminar (Funções Legadas Mantidas)
         const editBtn = target.closest('.comment-edit-btn');
         if (editBtn) {
             e.preventDefault();
@@ -266,11 +285,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Cancelar/Salvar Edição e Exclusão (Mantidos conforme original)
         if (target.closest('.comment-edit-cancel')) {
+            e.preventDefault();
             const wrap = document.getElementById(`comment-wrapper-${target.closest('.comment-edit-cancel').dataset.commentId}`);
             wrap.querySelector('.comment-view-mode').classList.remove('is-hidden');
             wrap.querySelector('.comment-edit-form').classList.add('is-hidden');
+            return;
         }
 
         const saveEdit = target.closest('.comment-edit-save');
@@ -288,6 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 wrap.querySelector('.comment-view-mode').classList.remove('is-hidden');
                 wrap.querySelector('.comment-edit-form').classList.add('is-hidden');
             }
+            return;
         }
 
         const deleteBtn = target.closest('.comment-delete-btn');
@@ -298,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const res = await apiFetch('comentarios/excluir_comentario.php', 'POST', fd);
                 if (res.success) document.getElementById(`comment-wrapper-${deleteBtn.dataset.commentId}`).innerHTML = '<p style="font-style:italic;color:#65676b;padding:10px;">Eliminado.</p>';
             }
+            return;
         }
     });
 });
